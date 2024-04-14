@@ -1,16 +1,21 @@
-import { useState } from "react";
-import Layout from "./components/Layout/Index";
+import Calculator from "./components/Calculator/Calculator";
+import TodoContainer from "./components/Todo/TodoContainer";
+import Calendar from "./components/Calendar/Calendar";
+import Weather from "./components/Weather/Weather";
 import "./App.css";
 import ThemeProvider from "./Context/ThemeProvider";
 import { useContext } from "react";
 
 function App() {
   // props for app context
-  const { theme, setTheme } = useContext(ThemeContext);
+  //const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <ThemeProvider>
-      <Layout />
+      <Calculator />
+      <TodoContainer />
+      <Calendar />
+      <Weather />
     </ThemeProvider>
   );
 }
