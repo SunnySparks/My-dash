@@ -3,13 +3,14 @@ import axios from "axios";
 
 const Weather = () => {
   const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
   const [weatherData, setWeatherData] = useState(null);
 
   const fetchWeatherData = async () => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
+          import.meta.env.VITE_API_KEY
+        }`
       );
       console.log(response.data);
       setWeatherData(response.data);
