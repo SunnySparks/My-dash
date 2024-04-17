@@ -5,6 +5,7 @@ import Weather from "./components/Weather/Weather";
 import "./App.css";
 import ThemeProvider from "./Context/ThemeProvider";
 import { useContext } from "react";
+import Clock from "./components/Clock/Clock";
 
 function App() {
   // props for app context
@@ -16,6 +17,7 @@ function App() {
       <TodoContainer />
       <Calendar />
       <Weather />
+      <Clock />
     </ThemeProvider>
   );
 }
