@@ -12,7 +12,7 @@ const Clock = () => {
 
   setInterval(updateTime, 1000);
   return (
-    <div>
+    <div id="clockCont" className="outerCont">
       <h1>{currentTime}</h1>
     </div>
   );

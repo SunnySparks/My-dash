@@ -9,14 +9,15 @@ const Calculator = (props) => {
   const [segundoValor, setSegundoValor] = useState("0");
   const [resultDisplay, setResultDisplay] = useState("");
   const [simboloPrev, setSimboloPrev] = useState("");
+  const [valorTotal, setValorTotal] = useState("0");
 
   return (
-    <div>
-      <h1>Calculator</h1>
+    <div id="calcCont" className="outerCont">
       <Display
         valorDisplay={valorDisplay}
         simboloDisplay={simboloDisplay}
         segundoValor={segundoValor}
+        valorTotal={valorTotal}
       />
       <Numpad
         setValorDisplay={setValorDisplay}
@@ -27,6 +28,7 @@ const Calculator = (props) => {
         segundoValor={segundoValor}
         setSimboloPrev={setSimboloPrev}
         simboloPrev={simboloPrev}
+        setValorTotal={setValorTotal}
       />
     </div>
   );

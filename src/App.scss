@@ -1,0 +1,22 @@
+#appGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  #calcCont {
+    border: 2px solid #fff;
+    width: 400px;
+    #calcScreen {
+      height: 180px;
+      width: 80%;
+      padding: 10px;
+      border: 2px solid #114bd1;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      #calcOperation {
+        display: flex;
+      }
+    }
+  }
+}

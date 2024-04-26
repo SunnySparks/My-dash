@@ -11,6 +11,8 @@ const Symbols = (props) => {
   const segundoValor = props.segundoValor;
   const simboloPrev = props.simboloPrev;
   const setSimboloPrev = props.setSimboloPrev;
+  const valorTotal = props.valorTotal;
+  const setValorTotal = props.setValorTotal;
   let total = 0;
 
   const erase = () => {
@@ -72,10 +74,12 @@ const Symbols = (props) => {
     setValorDisplay("0");
     setSimboloDisplay("");
     setSegundoValor("0");
+    setValorTotal("0");
   };
 
   const afterOpSetter = () => {
-    setValorDisplay(total);
+    setValorDisplay("0");
+    setValorTotal(total);
     setSimboloDisplay("");
     setSegundoValor("0");
   };

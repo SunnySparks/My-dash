@@ -25,7 +25,7 @@ const Weather = () => {
   };
 
   return (
-    <div>
+    <div id="weathCont" className="outerCont">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -10,7 +10,7 @@ const TodoContainer = () => {
   };
 
   return (
-    <div>
+    <div id="todoCont" className="outerCont">
       <FormTodo handleAddItem={handleAddItem} />
       <TaskList list={list} setList={setList} />
     </div>

@@ -4,13 +4,19 @@ const Display = (props) => {
   const valorDisplay = props.valorDisplay;
   const simboloDisplay = props.simboloDisplay;
   const segundoValor = props.segundoValor;
+  const valorTotal = props.valorTotal;
 
   return (
-    <>
-      <div id="valor">{valorDisplay !== "0" ? valorDisplay : ""}</div>
-      <div id="simbolo">{simboloDisplay}</div>
-      <div id="segundoValor">{segundoValor !== "0" ? segundoValor : ""}</div>
-    </>
+    <div id="calcScreen">
+      <div id="calcOperation">
+        <div id="valor">{valorDisplay !== "0" ? valorDisplay : ""}</div>
+        <div id="simbolo">{simboloDisplay}</div>
+        <div id="segundoValor">{segundoValor !== "0" ? segundoValor : ""}</div>
+      </div>
+      <div id="calcResult">
+        <div id="valorTotal">{valorTotal !== "0" ? valorTotal : ""}</div>
+      </div>
+    </div>
   );
 };
 

@@ -14,10 +14,11 @@ const Numpad = (props) => {
   const segundoValor = props.segundoValor;
   const simboloPrev = props.simboloPrev;
   const setSimboloPrev = props.setSimboloPrev;
+  const valorTotal = props.valorTotal;
+  const setValorTotal = props.setValorTotal;
 
   return (
     <div>
-      <h1>Contenedor Botones</h1>
       {listaBotones.map((nombre) => (
         <Button setValorDisplay={setValorDisplay} nombre={nombre} />
       ))}
@@ -32,6 +33,8 @@ const Numpad = (props) => {
           segundoValor={segundoValor}
           setSimboloPrev={setSimboloPrev}
           simboloPrev={simboloPrev}
+          valorTotal={valorTotal}
+          setValorTotal={setValorTotal}
         />
       ))}
     </div>

@@ -5,7 +5,7 @@ import TodoContainer from "../Todo/TodoContainer";
 import Calendar from "../Calendar/Calendar";
 import Weather from "../Weather/Weather";
 
-const Layout = ({ children, navOptions = [] }) => {
+const Layout = () => {
   return (
     <>
       Layout
