@@ -13,6 +13,7 @@ const Calculator = (props) => {
 
   return (
     <div id="calcCont" className="outerCont">
+      <h2>Calculator</h2>
       <Display
         valorDisplay={valorDisplay}
         simboloDisplay={simboloDisplay}

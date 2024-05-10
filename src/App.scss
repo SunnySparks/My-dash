@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  //Calculator Layout
   #calcCont {
     border: 2px solid #fff;
     width: 400px;
@@ -14,8 +16,46 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      background: #fff;
+      color: #000;
       #calcOperation {
         display: flex;
+        justify-content: space-evenly;
+      }
+    }
+    #calcBtns {
+      display: flex;
+      margin: 20px;
+      #numBtn {
+        display: flex;
+        flex-wrap: wrap;
+        .numBtn {
+          width: 33%;
+          background: #012372;
+          border: 1px solid #fff;
+        }
+      }
+      #symBtn {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        .symBtn {
+          width: 33%;
+          background: #0d3308;
+          border: 1px solid #fff;
+          &:nth-of-type(7) {
+            position: absolute;
+            bottom: 0;
+            left: -75px;
+            width: 72.78px !important;
+          }
+        }
+        #⌫ {
+          position: absolute;
+          left: -148px;
+          bottom: 0;
+          width: 72.78px !important;
+        }
       }
     }
   }
