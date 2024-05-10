@@ -20,34 +20,38 @@ const Numpad = (props) => {
   const check = props.check;
 
   return (
-    <div>
-      {listaBotones.map((nombre, index) => (
-        <Button
-          setValorDisplay={setValorDisplay}
-          setSegundoValor={setSegundoValor}
-          check={check}
-          nombre={nombre}
-          key={index}
-        />
-      ))}
-      {listaSimbolos.map((simbolo, index) => (
-        <Symbols
-          setSimboloDisplay={setSimboloDisplay}
-          simbolo={simbolo}
-          setValorDisplay={setValorDisplay}
-          valorDisplay={valorDisplay}
-          setSegundoValor={setSegundoValor}
-          setResultDisplay={setResultDisplay}
-          segundoValor={segundoValor}
-          setSimboloPrev={setSimboloPrev}
-          simboloPrev={simboloPrev}
-          valorTotal={valorTotal}
-          setValorTotal={setValorTotal}
-          setCheck={setCheck}
-          check={check}
-          key={index}
-        />
-      ))}
+    <div id="calcBtns">
+      <div id="numBtn">
+        {listaBotones.map((nombre, index) => (
+          <Button
+            setValorDisplay={setValorDisplay}
+            setSegundoValor={setSegundoValor}
+            check={check}
+            nombre={nombre}
+            key={index}
+          />
+        ))}
+      </div>
+      <div id="symBtn">
+        {listaSimbolos.map((simbolo, index) => (
+          <Symbols
+            setSimboloDisplay={setSimboloDisplay}
+            simbolo={simbolo}
+            setValorDisplay={setValorDisplay}
+            valorDisplay={valorDisplay}
+            setSegundoValor={setSegundoValor}
+            setResultDisplay={setResultDisplay}
+            segundoValor={segundoValor}
+            setSimboloPrev={setSimboloPrev}
+            simboloPrev={simboloPrev}
+            valorTotal={valorTotal}
+            setValorTotal={setValorTotal}
+            setCheck={setCheck}
+            check={check}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   );
 };
