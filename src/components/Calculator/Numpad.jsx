@@ -16,11 +16,19 @@ const Numpad = (props) => {
   const setSimboloPrev = props.setSimboloPrev;
   const valorTotal = props.valorTotal;
   const setValorTotal = props.setValorTotal;
+  const setCheck = props.setCheck;
+  const check = props.check;
 
   return (
     <div>
       {listaBotones.map((nombre, index) => (
-        <Button setValorDisplay={setValorDisplay} nombre={nombre} key={index} />
+        <Button
+          setValorDisplay={setValorDisplay}
+          setSegundoValor={setSegundoValor}
+          check={check}
+          nombre={nombre}
+          key={index}
+        />
       ))}
       {listaSimbolos.map((simbolo, index) => (
         <Symbols
@@ -35,6 +43,8 @@ const Numpad = (props) => {
           simboloPrev={simboloPrev}
           valorTotal={valorTotal}
           setValorTotal={setValorTotal}
+          setCheck={setCheck}
+          check={check}
           key={index}
         />
       ))}

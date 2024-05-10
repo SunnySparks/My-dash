@@ -3,15 +3,27 @@ import React from "react";
 const Button = (props) => {
   const setValorDisplay = props.setValorDisplay;
   const nombre = props.nombre;
+  const setSegundoValor = props.setSegundoValor;
+  const check = props.check;
 
   const handleClick = () => {
-    setValorDisplay((prev) => {
-      if (prev === "0") {
-        return nombre;
-      } else {
-        return prev + nombre;
-      }
-    });
+    if (check == true) {
+      setSegundoValor((prev) => {
+        if (prev === "0") {
+          return nombre;
+        } else {
+          return prev + nombre;
+        }
+      });
+    } else {
+      setValorDisplay((prev) => {
+        if (prev === "0") {
+          return nombre;
+        } else {
+          return prev + nombre;
+        }
+      });
+    }
   };
 
   return (
