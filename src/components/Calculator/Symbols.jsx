@@ -75,6 +75,7 @@ const Symbols = (props) => {
   const reset = () => {
     setValorDisplay("0");
     setSimboloDisplay("");
+    setSimboloPrev("");
     setSegundoValor("0");
     setValorTotal("0");
     setCheck(false);
