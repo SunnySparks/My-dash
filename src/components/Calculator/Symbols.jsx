@@ -13,6 +13,8 @@ const Symbols = (props) => {
   const setSimboloPrev = props.setSimboloPrev;
   const valorTotal = props.valorTotal;
   const setValorTotal = props.setValorTotal;
+  const setCheck = props.setCheck;
+  const check = props.check;
   let total = 0;
 
   const erase = () => {
@@ -75,13 +77,15 @@ const Symbols = (props) => {
     setSimboloDisplay("");
     setSegundoValor("0");
     setValorTotal("0");
+    setCheck(false);
   };
 
   const afterOpSetter = () => {
-    setValorDisplay("0");
+    //setValorDisplay("0");
     setValorTotal(total);
-    setSimboloDisplay("");
-    setSegundoValor("0");
+    //setSimboloDisplay("");
+    //setSegundoValor("0");
+    setCheck(false);
   };
 
   const sumOperator = () => {
@@ -89,7 +93,7 @@ const Symbols = (props) => {
   };
 
   const minOperator = () => {
-    total = segundoValor - valorDisplay;
+    total = valorDisplay - segundoValor;
   };
 
   const multOperator = () => {
@@ -97,7 +101,7 @@ const Symbols = (props) => {
   };
 
   const divOperator = () => {
-    total = segundoValor / valorDisplay;
+    total = valorDisplay / segundoValor;
   };
 
   const handleClick = () => {
@@ -106,7 +110,6 @@ const Symbols = (props) => {
       return; //Had to keep this return in the code, otherwise it will imput the delete icon on the calculator and will take an extra click to start deleting
     }
     setSimboloDisplay((prev) => {
-      console.log(simbolo);
       if (simbolo !== "=") {
         switch (simbolo) {
           case "+-":
@@ -122,39 +125,34 @@ const Symbols = (props) => {
             reset();
             break;
           default:
-            if (valorDisplay !== "0") {
-              setSegundoValor(valorDisplay);
-              setValorDisplay("0");
-            }
+            setValorDisplay(valorDisplay);
+            setCheck(true);
             let simboloAnterior = simbolo;
             setSimboloPrev(simboloAnterior);
             return simbolo;
         }
       } else {
-        if (segundoValor !== "0") {
-          switch (simboloPrev) {
-            case "+":
-              sumOperator();
-              afterOpSetter();
-              break;
-            case "-":
-              minOperator();
-              afterOpSetter();
-              break;
-            case "*":
-              multOperator();
-              afterOpSetter();
-              break;
-            case "/":
-              divOperator();
-              afterOpSetter();
-              break;
-            default:
-              break;
-          }
-        } else {
-          return;
+        switch (simboloPrev) {
+          case "+":
+            sumOperator();
+            afterOpSetter();
+            break;
+          case "-":
+            minOperator();
+            afterOpSetter();
+            break;
+          case "*":
+            multOperator();
+            afterOpSetter();
+            break;
+          case "/":
+            divOperator();
+            afterOpSetter();
+            break;
+          default:
+            break;
         }
+        return;
       }
     });
   };
