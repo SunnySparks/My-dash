@@ -160,7 +160,7 @@ const Symbols = (props) => {
   };
 
   return (
-    <button onClick={handleClick} id={simbolo} class="symBtn">
+    <button onClick={handleClick} id={simbolo} className="symBtn">
       {simbolo}
     </button>
   );

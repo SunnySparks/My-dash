@@ -23,7 +23,7 @@ const themes = [
 // Crear un componente ThemeProvider
 const ThemeProvider = ({ children }) => {
   // Definir el estado inicial del tema
-  const [theme, setTheme] = useState(0);
+  const [theme, setTheme] = useState(themes[0]);
 
   // Función para alternar el tema
   const toggleTheme = (newTheme) => {
@@ -32,14 +32,10 @@ const ThemeProvider = ({ children }) => {
 
   // Proporcionar el estado del tema y la función de alternar a los componentes hijos
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, themes }}>
+    <ThemeContext.Provider value={{ theme, themes, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
 
 export default ThemeProvider;
-
-export function useTheme() {
-  return useContext(ThemeContext);
-}

@@ -15,7 +15,7 @@ const Button = (props) => {
   };
 
   return (
-    <button onClick={handleClick} id={nombre} class="numBtn">
+    <button onClick={handleClick} id={nombre} className="numBtn">
       {nombre}
     </button>
   );

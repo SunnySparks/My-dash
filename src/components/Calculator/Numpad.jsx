@@ -19,10 +19,10 @@ const Numpad = (props) => {
 
   return (
     <div>
-      {listaBotones.map((nombre) => (
-        <Button setValorDisplay={setValorDisplay} nombre={nombre} />
+      {listaBotones.map((nombre, index) => (
+        <Button setValorDisplay={setValorDisplay} nombre={nombre} key={index} />
       ))}
-      {listaSimbolos.map((simbolo) => (
+      {listaSimbolos.map((simbolo, index) => (
         <Symbols
           setSimboloDisplay={setSimboloDisplay}
           simbolo={simbolo}
@@ -35,6 +35,7 @@ const Numpad = (props) => {
           simboloPrev={simboloPrev}
           valorTotal={valorTotal}
           setValorTotal={setValorTotal}
+          key={index}
         />
       ))}
     </div>

@@ -1,15 +1,15 @@
-import ThemeProvider from "../../Context/ThemeProvider";
-import React from "react";
-import { useTheme } from "../../Context/ThemeProvider";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeProvider";
 
 const Themes = () => {
-  //const [theme, setTheme] = useContext(ThemeProvider);
-  //
-  const themes = useContext(ThemeProvider);
-  //console.log(themes);
+  const { themes, toggleTheme } = useContext(ThemeContext);
   return (
     <div className="buttonCont">
-      <button>themes</button>
+      {themes.map((theme, index) => (
+        <button key={index} onClick={() => toggleTheme(theme)}>
+          {theme.name}
+        </button>
+      ))}
     </div>
   );
 };

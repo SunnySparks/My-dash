@@ -5,23 +5,21 @@ import Weather from "./components/Weather/Weather";
 import "./App.css";
 import "./App.scss";
 import ThemeProvider from "./Context/ThemeProvider";
-import { useContext } from "react";
 import Clock from "./components/Clock/Clock";
 import Themes from "./components/Layout/Themes";
+import Layout from "./components/Layout/Layout";
 
 function App() {
-  // props for app context
-  //const { theme, setTheme } = useContext(ThemeContext);
-
   return (
     <ThemeProvider>
-      <div id="appGrid">
+      <Layout>
         <Calculator />
         <TodoContainer />
         <Calendar />
         <Weather />
         <Clock />
-      </div>
+        <Themes />
+      </Layout>
     </ThemeProvider>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import Numpad from "./Numpad";
 import Display from "./Display";
 import { useState } from "react";
