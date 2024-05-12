@@ -10,7 +10,7 @@ const Display = (props) => {
   return (
     <div id="calcScreen">
       <div id="calcOperation">
-        <div id="valor">{valorDisplay !== "0" ? valorDisplay : "0"}</div>
+        <div id="valor">{valorDisplay !== "0" ? valorDisplay : ""}</div>
         <div id="simbolo">
           {simboloDisplay === "=" ? simboloDisplay : simboloPrev}
         </div>
