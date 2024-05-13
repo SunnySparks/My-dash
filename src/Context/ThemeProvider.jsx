@@ -5,7 +5,7 @@ export const ThemeContext = createContext();
 const themes = [
   {
     name: "light",
-    className: "pastel-theme",
+    className: "light-theme",
     index: "zero",
   },
   {
@@ -15,7 +15,7 @@ const themes = [
   },
   {
     name: "dark",
-    className: "retro-theme",
+    className: "dark-theme",
     index: "two",
   },
 ];
