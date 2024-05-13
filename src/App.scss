@@ -1,78 +1,180 @@
+//General Layout
 #appGrid {
   display: flex;
   flex-direction: column;
   align-items: center;
+  //width: 1600px;
+  max-width: 100%;
+  .outerCont {
+    //width: 100%;
+  }
+}
 
-  //Calculator Layout
-  #calcCont {
-    border: 2px solid #fff;
-    width: 400px;
-    border-radius: 10px;
-    #calcScreen {
-      height: 180px;
-      width: 80%;
-      padding: 10px;
-      border: 2px solid #114bd1;
-      margin: 20px auto;
+//Buttons Layout
+.buttonCont {
+  padding: 20px;
+  button {
+    margin: 10px;
+  }
+}
+
+//Calculator Layout
+#calcCont {
+  border: 2px solid #fff;
+  width: 320px;
+  border-radius: 10px;
+  #calcScreen {
+    height: 180px;
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    #calcOperation {
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      background: #fff;
-      color: #000;
-      #calcOperation {
-        display: flex;
-        justify-content: space-evenly;
-        > div {
-          width: 33%;
-          border: 1px solid #000;
-          margin: 10px;
-          border-radius: 5px;
-          height: 26px;
-        }
-      }
-      #calcResult {
-        > div {
-          border: 1px solid #000;
-          margin: 10px;
-          border-radius: 5px;
-          height: 26px;
-        }
+      justify-content: space-evenly;
+      > div {
+        width: 33%;
+        margin: 10px;
+        border-radius: 5px;
+        height: 26px;
       }
     }
-    #calcBtns {
-      display: flex;
-      margin: 20px;
-      #numBtn {
-        display: flex;
-        flex-wrap: wrap;
-        .numBtn {
-          width: 33%;
-          background: #012372;
-          border: 1px solid #fff;
-        }
-      }
-      #symBtn {
-        display: flex;
-        position: relative;
-        flex-wrap: wrap;
-        .symBtn {
-          width: 33%;
-          background: #0d3308;
-          border: 1px solid #fff;
-          &:nth-of-type(7) {
-            position: absolute;
-            bottom: 0;
-            left: -75px;
-            width: 72.78px !important;
-          }
-        }
-        #⌫ {
-          position: absolute;
-          left: -148px;
-          bottom: 0;
-          width: 72.78px !important;
-        }
+    #calcResult {
+      > div {
+        margin: 10px;
+        border-radius: 5px;
+        height: 26px;
       }
     }
   }
+  #calcBtns {
+    display: flex;
+    margin: 20px;
+    #numBtn {
+      display: flex;
+      flex-wrap: wrap;
+      .numBtn {
+        width: 30%;
+
+        margin: 2px;
+      }
+    }
+    #symBtn {
+      display: flex;
+      position: relative;
+      flex-wrap: wrap;
+      .symBtn {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        margin: 2px;
+        &:nth-of-type(7) {
+          position: absolute;
+          bottom: 0;
+          left: -52px;
+          width: 46.4px !important;
+        }
+      }
+      #⌫ {
+        position: absolute;
+        left: -103px;
+        bottom: 0;
+        width: 46.4px !important;
+      }
+    }
+  }
+}
+
+.light-theme {
+  background: #d4d4d4;
+  #calcCont {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 10px;
+    border: 10px solid #000;
+    clip-path: polygon(
+      0px 12px,
+      4px 12px,
+      4px 4px,
+      8px 4px,
+      12px 4px,
+      12px 0px,
+      calc(100% - 12px) 0px,
+      calc(100% - 12px) 4px,
+      calc(100% - 4px) 4px,
+      calc(100% - 4px) 8px,
+      calc(100% - 4px) 12px,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 4px) calc(100% - 12px),
+      calc(100% - 4px) calc(100% - 4px),
+      calc(100% - 8px) calc(100% - 4px),
+      calc(100% - 12px) calc(100% - 4px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      12px calc(100% - 4px),
+      4px calc(100% - 4px),
+      4px calc(100% - 8px),
+      4px calc(100% - 12px),
+      0px calc(100% - 12px)
+    );
+  }
+  #calcScreen {
+    //background: #76dfff;
+    background: #fdec56;
+    color: #000;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    padding: 10px;
+    color: #000;
+    clip-path: polygon(
+      0px 12px,
+      6px 12px,
+      6px 6px,
+      12px 6px,
+      12px 0px,
+      calc(100% - 12px) 0px,
+      calc(100% - 12px) 6px,
+      calc(100% - 6px) 6px,
+      calc(100% - 6px) 12px,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 6px),
+      calc(100% - 12px) calc(100% - 6px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      12px calc(100% - 6px),
+      6px calc(100% - 6px),
+      6px calc(100% - 12px),
+      0px calc(100% - 12px)
+    );
+  }
+  #calcBtns {
+    button {
+      border: 3px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      box-shadow: 3px 3px 0px 0px rgb(0 0 0);
+    }
+    .numBtn {
+      background: #0942c7;
+    }
+    .symBtn {
+      background: #f262ff;
+    }
+  }
+}
+
+.gradient-theme {
+  background: #5ad6ff;
+}
+
+.dark-theme {
+  background: #242424;
 }

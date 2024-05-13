@@ -13,12 +13,12 @@ function App() {
   return (
     <ThemeProvider>
       <Layout>
+        <Themes />
         <Calculator />
         <TodoContainer />
         <Calendar />
         <Weather />
         <Clock />
-        <Themes />
       </Layout>
     </ThemeProvider>
   );
