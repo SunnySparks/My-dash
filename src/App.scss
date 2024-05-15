@@ -57,8 +57,9 @@
       flex-wrap: wrap;
       .numBtn {
         width: 30%;
-
         margin: 2px;
+        display: flex;
+        justify-content: center;
       }
     }
     #symBtn {
@@ -88,6 +89,60 @@
 }
 
 .light-theme {
+  background: #edece1;
+  #calcCont {
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    #calcScreen {
+      background: #121212;
+      margin: 0;
+      width: auto;
+      #calcOperation {
+        div {
+          font-size: 30px;
+          font-weight: 800;
+          color: #fff;
+        }
+      }
+      #calcResult {
+        font-size: 40px;
+        font-weight: 800;
+        color: #fff;
+      }
+    }
+    #calcBtns {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      #numBtn {
+        justify-content: center;
+        .numBtn {
+          background: #dcdcdd;
+          border-radius: 50%;
+          color: #758594;
+          margin: 1px;
+        }
+      }
+      #symBtn {
+        .symBtn {
+          background: #20ceb2;
+          &:nth-of-type(7) {
+            border-radius: 50%;
+            left: -58px;
+          }
+        }
+        #⌫ {
+          border-radius: 50%;
+          left: -166px;
+        }
+      }
+    }
+  }
+}
+
+.super-theme {
   background: #d4d4d4;
   #calcCont {
     background: #fff;
@@ -176,5 +231,5 @@
 }
 
 .dark-theme {
-  background: #242424;
+  background: #121212;
 }
