@@ -9,14 +9,19 @@ const themes = [
     index: "zero",
   },
   {
+    name: "Super",
+    className: "super-theme",
+    index: "one",
+  },
+  {
     name: "gradient",
     className: "gradient-theme",
-    index: "one",
+    index: "two",
   },
   {
     name: "dark",
     className: "dark-theme",
-    index: "two",
+    index: "three ",
   },
 ];
 
