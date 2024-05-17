@@ -123,6 +123,8 @@
     }
     .listCont {
       padding-top: 20px;
+      color: #000;
+      font-weight: 700;
       #cbCont {
         #cbInner {
           display: flex;
@@ -152,11 +154,6 @@
       top: 0;
       transform: rotate(-1deg);
       z-index: -1;
-      background-image: repeating-linear-gradient(
-        #e6dfd3 0px,
-        #e6dfd3 24px,
-        teal 25px
-      );
     }
     &:after {
       top: 5px;
