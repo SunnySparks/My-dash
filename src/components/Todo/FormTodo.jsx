@@ -16,7 +16,7 @@ const FormTodo = (props) => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div id="todoCont">
+      <div id="todoWrapper">
         <div id="todoInner">
           <input
             type="text"

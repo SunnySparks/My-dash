@@ -25,7 +25,7 @@ const TaskList = (props) => {
     <CheckBox key={item.id} data={item} onChange={onChangeStatus} />
   ));
   return (
-    <div id="listCont">
+    <div class="listCont">
       {list.length ? check : "No tasks"}
       {list.length ? (
         <p>
