@@ -6,15 +6,17 @@ const Themes = () => {
   return (
     <div className="buttonCont">
       <h2>Choose Your Theme here</h2>
-      {themes.map((theme, index) => (
-        <button
-          key={index}
-          className={theme.className}
-          onClick={() => toggleTheme(theme)}
-        >
-          {theme.name}
-        </button>
-      ))}
+      <div id="btnInner">
+        {themes.map((theme, index) => (
+          <button
+            key={index}
+            className={theme.className}
+            onClick={() => toggleTheme(theme)}
+          >
+            {theme.name}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

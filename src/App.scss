@@ -6,15 +6,25 @@
   //width: 1600px;
   max-width: 100%;
   .outerCont {
-    //width: 100%;
+    width: 340px;
   }
 }
 
 //Buttons Layout
 .buttonCont {
   padding: 20px;
-  button {
-    margin: 10px;
+  #btnInner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    button {
+      margin: 10px;
+      width: 40%;
+    }
+    .light-theme {
+      border: 1px solid #000;
+      color: #000;
+    }
   }
 }
 
@@ -23,6 +33,7 @@
   border: 2px solid #fff;
   width: 320px;
   border-radius: 10px;
+  margin: 20px;
   #calcScreen {
     height: 180px;
     width: 80%;
@@ -30,7 +41,7 @@
     margin: 20px auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     #calcOperation {
       display: flex;
       justify-content: space-evenly;
@@ -88,8 +99,82 @@
   }
 }
 
+//to-do list Layout
+#todoCont {
+  margin: 30px 0;
+  #todoListWrapper {
+    background: #e6dfd3;
+    position: relative;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    padding: 20px;
+    border: 1px solid #bbb;
+    h2 {
+      text-transform: uppercase;
+    }
+    form {
+      #todoWrapper {
+        #todoInner {
+          input {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    .listCont {
+      padding-top: 20px;
+      #cbCont {
+        #cbInner {
+          display: flex;
+          justify-content: start;
+          .cbText {
+            margin-right: 20px;
+          }
+          .todoTxt {
+            color: #000;
+          }
+        }
+      }
+    }
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+      position: absolute;
+      height: 95%;
+      width: 99%;
+      background-color: #e6dfd3;
+      border: 1px solid #bbb;
+    }
+    &:before {
+      right: 15px;
+      top: 0;
+      transform: rotate(-1deg);
+      z-index: -1;
+      background-image: repeating-linear-gradient(
+        #e6dfd3 0px,
+        #e6dfd3 24px,
+        teal 25px
+      );
+    }
+    &:after {
+      top: 5px;
+      right: -5px;
+      transform: rotate(1deg);
+      z-index: -2;
+    }
+  }
+}
+
 .light-theme {
   background: #edece1;
+  .buttonCont {
+    h2 {
+      color: #000;
+      text-transform: uppercase;
+    }
+  }
   #calcCont {
     background: #fff;
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
@@ -135,9 +220,14 @@
         }
         #⌫ {
           border-radius: 50%;
-          left: -166px;
+          left: -174px;
         }
       }
+    }
+  }
+  #todoCont {
+    h2 {
+      color: #000;
     }
   }
 }
