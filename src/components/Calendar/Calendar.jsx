@@ -3,12 +3,24 @@ import Fullcalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import "bootstrap/dist/css/bootstrap.css";
+import googleCalendarPlugin from "@fullcalendar/google-calendar";
 
 function Calendar() {
   return (
     <div id="caleCont" className="outerCont">
       <Fullcalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        plugins={[
+          dayGridPlugin,
+          timeGridPlugin,
+          interactionPlugin,
+          googleCalendarPlugin,
+        ]}
+        googleCalendarApiKey={"AIzaSyCjAUHoSOP-7AToXdQ3JWZQw8u9FNB00cc"}
+        events={{
+          googleCalendarId:
+            "a5886386cde220ec5d4603cac4a9afa7090e8efa6db467bc6c9363708f582fb7@group.calendar.google.com",
+        }}
         initialView={"dayGridMonth"}
         headerToolbar={{
           start: "today prev,next",
@@ -22,3 +34,7 @@ function Calendar() {
 }
 
 export default Calendar;
+
+// AIzaSyCjAUHoSOP-7AToXdQ3JWZQw8u9FNB00cc
+
+// a5886386cde220ec5d4603cac4a9afa7090e8efa6db467bc6c9363708f582fb7@group.calendar.google.com
