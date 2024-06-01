@@ -16,6 +16,7 @@ function Calendar() {
           interactionPlugin,
           googleCalendarPlugin,
         ]}
+        themeSystem={"bootstrap5"}
         googleCalendarApiKey={"AIzaSyCjAUHoSOP-7AToXdQ3JWZQw8u9FNB00cc"}
         events={{
           googleCalendarId:
