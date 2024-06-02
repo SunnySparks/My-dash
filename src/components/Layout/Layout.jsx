@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   const { themes, theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div id="appGrid" className={`${theme.className}`}>
-      {children}
+      <div id="gridInner">{children}</div>
     </div>
   );
 };

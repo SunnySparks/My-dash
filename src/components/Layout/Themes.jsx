@@ -4,7 +4,7 @@ import { ThemeContext } from "../../Context/ThemeProvider";
 const Themes = () => {
   const { themes, toggleTheme } = useContext(ThemeContext);
   return (
-    <div className="buttonCont">
+    <div id="buttonCont">
       <h2>Choose Your Theme here</h2>
       <div id="btnInner">
         {themes.map((theme, index) => (

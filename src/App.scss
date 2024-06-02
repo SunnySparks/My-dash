@@ -1,17 +1,45 @@
 //General Layout
 #appGrid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  //width: 1600px;
-  max-width: 100%;
-  .outerCont {
-    width: 340px;
+  width: 100%;
+  #gridInner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #buttonCont {
+      width: 340px;
+      margin: 0 auto;
+      @media (min-width: 992px) {
+        width: 600px;
+      }
+    }
+    #componentContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1500px;
+      width: 100%;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .outerCont {
+        width: 340px;
+        margin: 20px 0;
+        @media (min-width: 768px) {
+          margin: 20px;
+        }
+        @media (min-width: 992px) {
+          margin: 20px 30px;
+        }
+      }
+    }
   }
 }
 
 //Buttons Layout
-.buttonCont {
+#buttonCont {
   padding: 20px;
   #btnInner {
     display: flex;
@@ -25,6 +53,10 @@
       border: 1px solid #000;
       color: #000;
     }
+    .super-theme {
+      border: 1px solid #ff03f4;
+      background-size: cover;
+    }
   }
 }
 
@@ -36,7 +68,6 @@
   margin: 20px;
   #calcScreen {
     height: 180px;
-    width: 80%;
     padding: 10px;
     margin: 20px auto;
     display: flex;
@@ -62,7 +93,6 @@
   }
   #calcBtns {
     display: flex;
-    margin: 20px;
     #numBtn {
       display: flex;
       flex-wrap: wrap;
@@ -102,6 +132,9 @@
 //to-do list Layout
 #todoCont {
   margin: 30px 0;
+  @media (min-width: 1440px) {
+    width: 500px !important;
+  }
   #todoListWrapper {
     background: #e6dfd3;
     position: relative;
@@ -168,13 +201,16 @@
 //Calendar Layout
 #caleCont {
   margin: 30px 0;
+  @media (min-width: 992px) {
+    width: 500px !important;
+  }
   .fc-toolbar.fc-header-toolbar {
-    @media (max-width: 767px) {
+    @media (max-width: 1439px) {
       display: flex;
       flex-direction: column;
     }
     .fc-toolbar-chunk {
-      @media (max-width: 767px) {
+      @media (max-width: 1439px) {
         display: flex;
       }
       h2 {
@@ -185,8 +221,75 @@
   }
 }
 
+#weathCont {
+  padding: 20px;
+  height: 780px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  @media (min-width: 992px) {
+    width: 480px !important;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @media (min-width: 992px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    input {
+      background: #fff;
+      border: 1px solid #000;
+      border-radius: 8px;
+      color: #000;
+      padding: 0 10px;
+      font-size: 18px;
+      margin: 10px 0;
+      @media (min-width: 992px) {
+        margin: 10px 8px;
+      }
+    }
+    button {
+      background: #fff;
+      border: 1px solid #000;
+      color: #000;
+      margin: 10px auto;
+      width: 80px;
+      @media (min-width: 992px) {
+        width: 70px;
+      }
+    }
+  }
+  #weathercondition {
+    #wimg {
+      img {
+        height: auto;
+        width: 300px;
+      }
+    }
+    #wcity {
+      font-size: 50px;
+    }
+    #wdescription {
+      font-size: 30px;
+    }
+    .temperatureCont {
+      margin: 20px 0;
+      font-size: 20px;
+      .tempIndicator {
+        font-weight: 800;
+        font-size: 40px;
+        margin-left: 10px;
+      }
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
+
 .light-theme {
-  background: #f7f6f2;
+  background: #fafafa;
   .buttonCont {
     h2 {
       color: #000;
@@ -244,14 +347,61 @@
     }
   }
   #todoCont {
-    h2 {
-      color: #000;
+    #todoListWrapper {
+      h2 {
+        color: #000;
+      }
+      form {
+        #todoWrapper {
+          #todoInner {
+            button {
+              background: #20ceb2;
+            }
+          }
+        }
+      }
+    }
+  }
+  #caleCont {
+    .fc-header-toolbar.fc-toolbar {
+      .fc-toolbar-chunk {
+        &:first-of-type {
+          .fc-button-group {
+            button {
+              background: #20ceb2 !important;
+            }
+          }
+        }
+        &:last-of-type {
+          .fc-button-group {
+            button {
+              &:first-of-type {
+                background: #08332c !important;
+              }
+              &:not(:first-of-type) {
+                background: #20ceb2 !important;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
 .super-theme {
-  background: #d4d4d4;
+  background: url(../src/assets/bg/superbg.jpg) no-repeat;
+  background-size: cover;
+  #buttonCont {
+    h2 {
+      color: #fff;
+    }
+  }
+  #clockCont {
+    h1 {
+      color: #fff;
+    }
+  }
   #calcCont {
     background: #fff;
     color: #000;
@@ -288,11 +438,11 @@
   #calcScreen {
     //background: #76dfff;
     background: #fdec56;
+    width: auto;
     color: #000;
     border: 3px solid #fff;
     border-radius: 15px;
-    padding: 10px;
-    color: #000;
+    border: 8px solid #000;
     clip-path: polygon(
       0px 12px,
       6px 12px,
@@ -317,6 +467,7 @@
     );
   }
   #calcBtns {
+    margin: 20px 0;
     button {
       border: 3px solid #000;
       display: flex;
