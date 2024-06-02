@@ -14,11 +14,13 @@ function App() {
     <ThemeProvider>
       <Layout>
         <Themes />
-        <Calculator />
-        <TodoContainer />
-        <Calendar />
-        <Weather />
         <Clock />
+        <div id="componentContainer">
+          <Calculator />
+          <TodoContainer />
+          <Calendar />
+          <Weather />
+        </div>
       </Layout>
     </ThemeProvider>
   );

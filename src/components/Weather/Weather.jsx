@@ -11,6 +11,8 @@ import hail from "../../assets/Weather/hail.png";
 import storm from "../../assets/Weather/storm.png";
 import scattered from "../../assets/Weather/scattered.png";
 import mist from "../../assets/Weather/mist.png";
+import cold from "../../assets/Weather/cold.png";
+import hot from "../../assets/Weather/hot.png";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -24,6 +26,7 @@ const Weather = () => {
         }`
       );
       setWeatherData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -39,65 +42,73 @@ const Weather = () => {
     switch (weath) {
       case "clouds":
         return <img src={cloud} alt="Clouds" />;
-        console.log(weath);
+        break;
+      case "overcast clouds":
+        return <img src={cloud} alt="Overcast Clouds" />;
         break;
       case "few clouds":
         return <img src={cloudysun} alt="Few Clouds" />;
-        console.log(weath);
         break;
       case "broken clouds":
         return <img src={cloudysun} alt="Broken Clouds" />;
-        console.log(weath);
         break;
       case "clear sky":
         return <img src={sun} alt="Clear Sky" />;
-        console.log(weath);
         break;
       case "rain":
         return <img src={rain} alt="Rainy" />;
-        console.log(weath);
         break;
       case "drizzle":
         return <img src={drizzle} alt="Drizzle" />;
-        console.log(weath);
         break;
       case "light rain":
         return <img src={drizzle} alt="Light rain" />;
-        console.log(weath);
         break;
       case "scattered clouds":
         return <img src={scattered} alt="Scattered Clouds" />;
-        console.log(weath);
         break;
       case "windy":
         return <img src={wind} alt="Windy" />;
-        console.log(weath);
         break;
       case "snow":
         return <img src={snow} alt="Snowy" />;
-        console.log(weath);
         break;
       case "hail":
         return <img src={hail} alt="Hail" />;
-        console.log(weath);
         break;
       case "storm":
         return <img src={storm} alt="Stormy" />;
-        console.log(weath);
         break;
       case "heavy intensity rain":
         return <img src={storm} alt="Stormy" />;
-        console.log(weath);
         break;
       case "mist":
         return <img src={mist} alt="Mist" />;
-        console.log(weath);
         break;
+    }
+  };
+
+  const tempSensor = () => {
+    const tempFeel = weatherData.main.temp;
+    if (tempFeel >= 32) {
+      return <img src={hot} alt="Hot" />;
+    } else if (tempFeel <= 10) {
+      return <img src={cold} alt="Cold" />;
+    }
+  };
+
+  const tempSensor2 = () => {
+    const tempFeel = weatherData.main.feels_like;
+    if (tempFeel >= 32) {
+      return <img src={hot} alt="Hot" />;
+    } else if (tempFeel <= 10) {
+      return <img src={cold} alt="Cold" />;
     }
   };
 
   return (
     <div id="weathCont" className="outerCont">
+      <h2 id="wtitle">Weather App</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -105,16 +116,24 @@ const Weather = () => {
           value={city}
           onChange={(event) => setCity(event.target.value)}
         />
-        <button type="submit">Get Weather</button>
+        <button type="submit">🔍</button>
       </form>
       {weatherData && (
         <div id="weathercondition">
           <div id="wimg">{weatherImg()}</div>
           <h2 id="wcity">{weatherData.name}</h2>
           <p id="wdescription">{weatherData.weather[0].description}</p>
-          <p id="wtemp">Temperature: {Math.round(weatherData.main.temp)}°C</p>
-          <p id="wfeel">
-            Feels Like: {Math.round(weatherData.main.feels_like)}°C
+          <p id="wtemp" className="temperatureCont">
+            <span className="tempIndicator">
+              {Math.round(weatherData.main.temp)}°C {tempSensor()}
+            </span>
+          </p>
+          <p id="wfeel" className="temperatureCont">
+            Feels Like:
+            <span className="tempIndicator">
+              {Math.round(weatherData.main.feels_like)}°C
+              {tempSensor2()}
+            </span>
           </p>
         </div>
       )}
