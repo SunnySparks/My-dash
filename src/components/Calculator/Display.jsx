@@ -1,23 +1,27 @@
-import React from "react";
-
-const Display = (props) => {
-  const valorDisplay = props.valorDisplay;
-  const simboloDisplay = props.simboloDisplay;
-  const segundoValor = props.segundoValor;
-  const valorTotal = props.valorTotal;
-  const simboloPrev = props.simboloPrev;
-
+const Display = ({
+  valorDisplay,
+  simboloDisplay,
+  segundoValor,
+  valorTotal,
+  simboloPrev,
+}) => {
   return (
     <div id="calcScreen">
       <div id="calcOperation">
-        <div id="valor">{valorDisplay !== "0" ? valorDisplay : ""}</div>
+        <div id="valor">
+          <p>{valorDisplay !== "0" ? valorDisplay : ""}</p>
+        </div>
         <div id="simbolo">
           {simboloDisplay === "=" ? simboloDisplay : simboloPrev}
         </div>
-        <div id="segundoValor">{segundoValor !== "0" ? segundoValor : ""}</div>
+        <div id="segundoValor">
+          <p>{segundoValor !== "0" ? segundoValor : ""}</p>
+        </div>
       </div>
       <div id="calcResult">
-        <div id="valorTotal">{valorTotal !== "0" ? valorTotal : ""}</div>
+        <div id="valorTotal">
+          <p>{valorTotal !== "0" ? valorTotal : ""}</p>
+        </div>
       </div>
     </div>
   );

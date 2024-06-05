@@ -81,6 +81,9 @@
         margin: 10px;
         border-radius: 5px;
         height: 26px;
+        p {
+          overflow: hidden;
+        }
       }
     }
     #calcResult {
@@ -88,6 +91,11 @@
         margin: 10px;
         border-radius: 5px;
         height: 26px;
+      }
+      #valorTotal {
+        p {
+          overflow: hidden;
+        }
       }
     }
   }
