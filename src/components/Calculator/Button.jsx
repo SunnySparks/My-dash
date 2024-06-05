@@ -1,11 +1,4 @@
-import React from "react";
-
-const Button = (props) => {
-  const setValorDisplay = props.setValorDisplay;
-  const nombre = props.nombre;
-  const setSegundoValor = props.setSegundoValor;
-  const check = props.check;
-
+const Button = ({ setValorDisplay, nombre, setSegundoValor, check }) => {
   const handleClick = () => {
     if (check == true) {
       setSegundoValor((prev) => {

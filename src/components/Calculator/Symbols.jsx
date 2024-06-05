@@ -1,28 +1,26 @@
-import React from "react";
 import { useState } from "react";
 
-const Symbols = (props) => {
-  const setSimboloDisplay = props.setSimboloDisplay;
-  const simbolo = props.simbolo;
-  const setValorDisplay = props.setValorDisplay;
-  const valorDisplay = props.valorDisplay;
-  const setSegundoValor = props.setSegundoValor;
-  const setResultDisplay = props.setResultDisplay;
-  const segundoValor = props.segundoValor;
-  const simboloPrev = props.simboloPrev;
-  const setSimboloPrev = props.setSimboloPrev;
-  const valorTotal = props.valorTotal;
-  const setValorTotal = props.setValorTotal;
-  const setCheck = props.setCheck;
-  const check = props.check;
+const Symbols = ({
+  setSimboloDisplay,
+  simbolo,
+  setValorDisplay,
+  valorDisplay,
+  setSegundoValor,
+  segundoValor,
+  simboloPrev,
+  setSimboloPrev,
+  setValorTotal,
+  setCheck,
+}) => {
   let total = 0;
 
   const erase = () => {
     let valorTemp = valorDisplay;
     let valorArray = [];
     if (
-      (valorDisplay !== "0" && segundoValor === "0") ||
-      segundoValor.length === 0
+      valorDisplay !== "0" &&
+      simboloPrev.length == 0 &&
+      segundoValor.length == 0
     ) {
       let simboloAnterior = simbolo;
       for (let i = 0; i < valorTemp.length - 1; i++) {
@@ -32,7 +30,17 @@ const Symbols = (props) => {
       if (valorDisplay.length == 0) {
         setValorDisplay("0");
       }
-    } else if (segundoValor !== "0" && valorDisplay !== "0") {
+    } else if (
+      valorDisplay !== "0" &&
+      simboloPrev.length > 0 &&
+      segundoValor.length == 0
+    ) {
+      setSimboloPrev("");
+    } else if (
+      segundoValor !== "0" &&
+      simboloPrev.length > 0 &&
+      valorDisplay !== "0"
+    ) {
       let valorTemp = segundoValor;
       let simboloAnterior = simbolo;
       for (let i = 0; i < valorTemp.length - 1; i++) {

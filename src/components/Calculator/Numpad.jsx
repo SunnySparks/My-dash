@@ -1,24 +1,21 @@
-import React from "react";
 import Button from "./Button";
 import Symbols from "./Symbols";
 
 const listaBotones = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const listaSimbolos = ["+-", "%", "/", "*", "-", "+", "=", ".", "C", "⌫"];
 
-const Numpad = (props) => {
-  const setValorDisplay = props.setValorDisplay;
-  const setSimboloDisplay = props.setSimboloDisplay;
-  const valorDisplay = props.valorDisplay;
-  const setSegundoValor = props.setSegundoValor;
-  const setResultDisplay = props.setResultDisplay;
-  const segundoValor = props.segundoValor;
-  const simboloPrev = props.simboloPrev;
-  const setSimboloPrev = props.setSimboloPrev;
-  const valorTotal = props.valorTotal;
-  const setValorTotal = props.setValorTotal;
-  const setCheck = props.setCheck;
-  const check = props.check;
-
+const Numpad = ({
+  setValorDisplay,
+  setSimboloDisplay,
+  valorDisplay,
+  setSegundoValor,
+  segundoValor,
+  simboloPrev,
+  setSimboloPrev,
+  setValorTotal,
+  setCheck,
+  check,
+}) => {
   return (
     <div id="calcBtns">
       <div id="numBtn">
@@ -40,14 +37,11 @@ const Numpad = (props) => {
             setValorDisplay={setValorDisplay}
             valorDisplay={valorDisplay}
             setSegundoValor={setSegundoValor}
-            setResultDisplay={setResultDisplay}
             segundoValor={segundoValor}
             setSimboloPrev={setSimboloPrev}
             simboloPrev={simboloPrev}
-            valorTotal={valorTotal}
             setValorTotal={setValorTotal}
             setCheck={setCheck}
-            check={check}
             key={index}
           />
         ))}

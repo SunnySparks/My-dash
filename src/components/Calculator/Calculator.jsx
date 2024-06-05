@@ -11,6 +11,12 @@ const Calculator = (props) => {
   const [valorTotal, setValorTotal] = useState("0");
   const [check, setCheck] = useState(false);
 
+  console.log("simboloPrev", simboloPrev);
+  console.log("simboloPrev length", simboloPrev.length);
+
+  console.log("segundoValor", segundoValor);
+  console.log("segundoValor length", segundoValor.length);
+
   return (
     <div id="calcCont" className="outerCont">
       <Display
@@ -25,7 +31,6 @@ const Calculator = (props) => {
         setSimboloDisplay={setSimboloDisplay}
         valorDisplay={valorDisplay}
         setSegundoValor={setSegundoValor}
-        setResultDisplay={setResultDisplay}
         segundoValor={segundoValor}
         setSimboloPrev={setSimboloPrev}
         simboloPrev={simboloPrev}
