@@ -148,7 +148,7 @@ const Weather = () => {
       )}
       {error && (
         <div id="errorDisplay">
-          <p>Error: {error} </p>
+          <p>⚠Error: {error} </p>
         </div>
       )}
     </div>
