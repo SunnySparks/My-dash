@@ -17,8 +17,11 @@ import hot from "../../assets/Weather/hot.png";
 const Weather = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(null);
 
   const fetchWeatherData = async () => {
+    setError(null);
+    setWeatherData(null);
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
@@ -29,6 +32,7 @@ const Weather = () => {
       console.log(response.data);
     } catch (error) {
       console.log(error);
+      setError(error.message);
     }
   };
 
@@ -106,6 +110,11 @@ const Weather = () => {
     }
   };
 
+  const errorWeather = () => {
+    const error = AxiosError.error;
+    return error;
+  };
+
   return (
     <div id="weathCont" className="outerCont">
       <h2 id="wtitle">Weather App</h2>
@@ -135,6 +144,11 @@ const Weather = () => {
               {tempSensor2()}
             </span>
           </p>
+        </div>
+      )}
+      {error && (
+        <div id="errorDisplay">
+          <p>Error: {error} </p>
         </div>
       )}
     </div>

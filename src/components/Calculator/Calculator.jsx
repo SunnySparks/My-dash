@@ -19,6 +19,7 @@ const Calculator = (props) => {
         segundoValor={segundoValor}
         valorTotal={valorTotal}
         simboloPrev={simboloPrev}
+        check={check}
       />
       <Numpad
         setValorDisplay={setValorDisplay}
