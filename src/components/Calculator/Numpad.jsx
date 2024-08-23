@@ -13,6 +13,7 @@ const Numpad = ({
   simboloPrev,
   setSimboloPrev,
   setValorTotal,
+  valorTotal,
   setCheck,
   check,
 }) => {
@@ -41,6 +42,7 @@ const Numpad = ({
             setSimboloPrev={setSimboloPrev}
             simboloPrev={simboloPrev}
             setValorTotal={setValorTotal}
+            valorTotal={valorTotal}
             setCheck={setCheck}
             key={index}
           />

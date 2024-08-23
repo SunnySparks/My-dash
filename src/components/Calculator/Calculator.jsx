@@ -30,6 +30,7 @@ const Calculator = (props) => {
         setSimboloPrev={setSimboloPrev}
         simboloPrev={simboloPrev}
         setValorTotal={setValorTotal}
+        valorTotal={valorTotal}
         setCheck={setCheck}
         check={check}
       />
