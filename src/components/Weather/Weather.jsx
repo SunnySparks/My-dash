@@ -13,6 +13,9 @@ import scattered from "../../assets/Weather/scattered.png";
 import mist from "../../assets/Weather/mist.png";
 import cold from "../../assets/Weather/cold.png";
 import hot from "../../assets/Weather/hot.png";
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const Weather = () => {
   const [city, setCity] = useState("");

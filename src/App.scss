@@ -60,83 +60,6 @@
   }
 }
 
-//Calculator Layout
-#calcCont {
-  border: 2px solid #fff;
-  width: 320px;
-  border-radius: 10px;
-  margin: 20px;
-  #calcScreen {
-    height: 180px;
-    padding: 10px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    #calcOperation {
-      display: flex;
-      justify-content: space-evenly;
-      > div {
-        width: 33%;
-        margin: 10px;
-        border-radius: 5px;
-        height: 26px;
-        p {
-          overflow: hidden;
-        }
-      }
-    }
-    #calcResult {
-      > div {
-        margin: 10px;
-        border-radius: 5px;
-        height: 26px;
-      }
-      #valorTotal {
-        p {
-          overflow: hidden;
-        }
-      }
-    }
-  }
-  #calcBtns {
-    display: flex;
-    #numBtn {
-      display: flex;
-      flex-wrap: wrap;
-      .numBtn {
-        width: 30%;
-        margin: 2px;
-        display: flex;
-        justify-content: center;
-      }
-    }
-    #symBtn {
-      display: flex;
-      position: relative;
-      flex-wrap: wrap;
-      .symBtn {
-        width: 45%;
-        display: flex;
-        justify-content: center;
-        margin: 2px;
-        &:nth-of-type(7) {
-          position: absolute;
-          bottom: 0;
-          left: -52px;
-          width: 46.4px !important;
-        }
-      }
-      #⌫ {
-        position: absolute;
-        left: -103px;
-        bottom: 0;
-        width: 46.4px !important;
-      }
-    }
-  }
-}
-
 //to-do list Layout
 #todoCont {
   margin: 30px 0;
@@ -202,29 +125,6 @@
       right: -5px;
       transform: rotate(1deg);
       z-index: -2;
-    }
-  }
-}
-
-//Calendar Layout
-#caleCont {
-  margin: 30px 0;
-  @media (min-width: 992px) {
-    width: 500px !important;
-  }
-  .fc-toolbar.fc-header-toolbar {
-    @media (max-width: 1439px) {
-      display: flex;
-      flex-direction: column;
-    }
-    .fc-toolbar-chunk {
-      @media (max-width: 1439px) {
-        display: flex;
-      }
-      h2 {
-        color: #000;
-        margin: 10px 0;
-      }
     }
   }
 }
@@ -419,39 +319,7 @@
       color: #fff;
     }
   }
-  #calcCont {
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-    padding: 10px;
-    border: 10px solid #000;
-    clip-path: polygon(
-      0px 12px,
-      4px 12px,
-      4px 4px,
-      8px 4px,
-      12px 4px,
-      12px 0px,
-      calc(100% - 12px) 0px,
-      calc(100% - 12px) 4px,
-      calc(100% - 4px) 4px,
-      calc(100% - 4px) 8px,
-      calc(100% - 4px) 12px,
-      100% 12px,
-      100% calc(100% - 12px),
-      calc(100% - 4px) calc(100% - 12px),
-      calc(100% - 4px) calc(100% - 4px),
-      calc(100% - 8px) calc(100% - 4px),
-      calc(100% - 12px) calc(100% - 4px),
-      calc(100% - 12px) 100%,
-      12px 100%,
-      12px calc(100% - 4px),
-      4px calc(100% - 4px),
-      4px calc(100% - 8px),
-      4px calc(100% - 12px),
-      0px calc(100% - 12px)
-    );
-  }
+
   #calcScreen {
     //background: #76dfff;
     background: #fdec56;

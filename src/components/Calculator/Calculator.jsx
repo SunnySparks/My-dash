@@ -1,6 +1,9 @@
 import Numpad from "./Numpad";
 import Display from "./Display";
 import { useState } from "react";
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const Calculator = (props) => {
   const [valorDisplay, setValorDisplay] = useState("0");

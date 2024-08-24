@@ -1,3 +1,7 @@
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
+
 const Button = ({ setValorDisplay, nombre, setSegundoValor, check }) => {
   const handleClick = () => {
     if (check == true) {

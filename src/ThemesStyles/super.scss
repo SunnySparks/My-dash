@@ -1,0 +1,63 @@
+.super-theme {
+  background: url(../src/assets/bg/superbg.jpg) no-repeat;
+  background-size: cover;
+  #buttonCont {
+    h2 {
+      color: #fff;
+    }
+  }
+  #clockCont {
+    h1 {
+      color: #fff;
+    }
+  }
+
+  #calcScreen {
+    //background: #76dfff;
+    background: #fdec56;
+    width: auto;
+    color: #000;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    border: 8px solid #000;
+    clip-path: polygon(
+      0px 12px,
+      6px 12px,
+      6px 6px,
+      12px 6px,
+      12px 0px,
+      calc(100% - 12px) 0px,
+      calc(100% - 12px) 6px,
+      calc(100% - 6px) 6px,
+      calc(100% - 6px) 12px,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 6px),
+      calc(100% - 12px) calc(100% - 6px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      12px calc(100% - 6px),
+      6px calc(100% - 6px),
+      6px calc(100% - 12px),
+      0px calc(100% - 12px)
+    );
+  }
+  #calcBtns {
+    margin: 20px 0;
+    button {
+      border: 3px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      box-shadow: 3px 3px 0px 0px rgb(0 0 0);
+    }
+    .numBtn {
+      background: #0942c7;
+    }
+    .symBtn {
+      background: #f262ff;
+    }
+  }
+}

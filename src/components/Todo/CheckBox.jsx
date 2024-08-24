@@ -1,4 +1,6 @@
-import React from "react";
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const CheckBox = (props) => {
   const {

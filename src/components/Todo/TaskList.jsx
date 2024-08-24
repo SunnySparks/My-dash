@@ -1,5 +1,7 @@
-import React from "react";
+import "./styles.scss";
 import CheckBox from "./CheckBox";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const TaskList = (props) => {
   const list = props.list;

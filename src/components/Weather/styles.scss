@@ -1,0 +1,75 @@
+#weathCont {
+  padding: 20px;
+  height: 780px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 992px) {
+    width: 480px !important;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @media (min-width: 992px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    input {
+      background: #fff;
+      border: 1px solid #000;
+      border-radius: 8px;
+      color: #000;
+      padding: 0 10px;
+      font-size: 18px;
+      margin: 10px 0;
+      @media (min-width: 992px) {
+        margin: 10px 8px;
+      }
+    }
+    button {
+      background: #fff;
+      border: 1px solid #000;
+      color: #000;
+      margin: 10px auto;
+      width: 80px;
+      @media (min-width: 992px) {
+        width: 70px;
+      }
+    }
+  }
+  #weathercondition {
+    #wimg {
+      img {
+        height: auto;
+        width: 300px;
+      }
+    }
+    #wcity {
+      font-size: 50px;
+    }
+    #wdescription {
+      font-size: 30px;
+    }
+    .temperatureCont {
+      margin: 20px 0;
+      font-size: 20px;
+      .tempIndicator {
+        font-weight: 800;
+        font-size: 40px;
+        margin-left: 10px;
+      }
+      img {
+        width: 40px;
+      }
+    }
+  }
+  #errorDisplay {
+    margin: auto;
+    p {
+      font-size: 50px;
+      font-weight: 700;
+    }
+  }
+}
