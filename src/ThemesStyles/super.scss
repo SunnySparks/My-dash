@@ -1,63 +1,194 @@
+@font-face {
+  font-family: "digital-7";
+  src: url("../fonts/digital-7.ttf");
+  src: url("../fonts/digital-7\ \(italic\).ttf");
+  src: url("../fonts/digital-7\ \(mono\ italic\).ttf");
+  src: url("../fonts/digital-7\ \(mono\).ttf");
+}
+
 .super-theme {
   background: url(../src/assets/bg/superbg.jpg) no-repeat;
   background-size: cover;
+  * {
+    font-family: "digital-7";
+  }
   #buttonCont {
     h2 {
       color: #fff;
     }
   }
   #clockCont {
+    margin: 10px;
+    border: 10px solid #fff;
+    background: #000;
     h1 {
-      color: #fff;
+      color: #19d88b !important;
+      margin-bottom: 0;
+      padding: 15px;
     }
   }
-
-  #calcScreen {
-    //background: #76dfff;
-    background: #fdec56;
-    width: auto;
-    color: #000;
-    border: 3px solid #fff;
-    border-radius: 15px;
-    border: 8px solid #000;
+  #calcCont {
+    border: 10px solid #000;
     clip-path: polygon(
       0px 12px,
-      6px 12px,
-      6px 6px,
-      12px 6px,
+      4px 12px,
+      4px 4px,
+      8px 4px,
+      12px 4px,
       12px 0px,
       calc(100% - 12px) 0px,
-      calc(100% - 12px) 6px,
-      calc(100% - 6px) 6px,
-      calc(100% - 6px) 12px,
+      calc(100% - 12px) 4px,
+      calc(100% - 4px) 4px,
+      calc(100% - 4px) 8px,
+      calc(100% - 4px) 12px,
       100% 12px,
       100% calc(100% - 12px),
-      calc(100% - 6px) calc(100% - 12px),
-      calc(100% - 6px) calc(100% - 6px),
-      calc(100% - 12px) calc(100% - 6px),
+      calc(100% - 4px) calc(100% - 12px),
+      calc(100% - 4px) calc(100% - 4px),
+      calc(100% - 8px) calc(100% - 4px),
+      calc(100% - 12px) calc(100% - 4px),
       calc(100% - 12px) 100%,
       12px 100%,
-      12px calc(100% - 6px),
-      6px calc(100% - 6px),
-      6px calc(100% - 12px),
+      12px calc(100% - 4px),
+      4px calc(100% - 4px),
+      4px calc(100% - 8px),
+      4px calc(100% - 12px),
       0px calc(100% - 12px)
     );
+    #calcScreen {
+      //background: #76dfff;
+      background: #fdec56;
+      width: 95%;
+      color: #000;
+      border: 3px solid #fff;
+      border-radius: 15px;
+      border: 8px solid #000;
+      clip-path: polygon(
+        0px 12px,
+        6px 12px,
+        6px 6px,
+        12px 6px,
+        12px 0px,
+        calc(100% - 12px) 0px,
+        calc(100% - 12px) 6px,
+        calc(100% - 6px) 6px,
+        calc(100% - 6px) 12px,
+        100% 12px,
+        100% calc(100% - 12px),
+        calc(100% - 6px) calc(100% - 12px),
+        calc(100% - 6px) calc(100% - 6px),
+        calc(100% - 12px) calc(100% - 6px),
+        calc(100% - 12px) 100%,
+        12px 100%,
+        12px calc(100% - 6px),
+        6px calc(100% - 6px),
+        6px calc(100% - 12px),
+        0px calc(100% - 12px)
+      );
+      #calcOperation {
+        margin-top: -20px;
+        #valor,
+        #simbolo,
+        #segundoValor {
+          p {
+            font-size: 40px;
+          }
+        }
+      }
+      #calcResult {
+        #valorTotal {
+          p {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+    #calcBtns {
+      margin: 20px 0;
+      button {
+        border: 3px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        box-shadow: 3px 3px 0px 0px rgb(0 0 0);
+      }
+      .numBtn {
+        background: #0942c7;
+        border-radius: 0;
+      }
+      .symBtn {
+        background: #f262ff;
+        border-radius: 0;
+        &:nth-of-type(7) {
+          left: -60px !important;
+          width: 55.71px !important;
+        }
+      }
+      #symBtn {
+        #⌫ {
+          left: -177px !important;
+          width: 55.71px !important;
+        }
+      }
+    }
   }
-  #calcBtns {
-    margin: 20px 0;
-    button {
-      border: 3px solid #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 800;
-      box-shadow: 3px 3px 0px 0px rgb(0 0 0);
+  #todoCont {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border: 16px black solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+    background: #fff;
+    #todoListWrapper {
+      background: transparent;
+      border: none;
+      form {
+        button {
+          background: #0942c7;
+          color: #fff;
+          box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
+          border: 1px solid #dedede;
+        }
+      }
+      .listCont {
+        .cbCont {
+          .cbInner {
+            .todoTxt {
+              font-size: 20px;
+            }
+          }
+        }
+        #btnTodo {
+          button {
+            background: #f262ff;
+            color: #fff;
+            box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
+            border: 1px solid #dedede;
+          }
+        }
+      }
+      &:before {
+        display: none;
+      }
+      &:after {
+        display: none;
+      }
     }
-    .numBtn {
-      background: #0942c7;
-    }
-    .symBtn {
-      background: #f262ff;
+    &::before {
+      content: "";
+      display: block;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      left: 50%;
+      bottom: -65px;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 50%;
     }
   }
 }

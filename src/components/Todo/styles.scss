@@ -28,8 +28,9 @@
       color: #000;
       font-weight: 700;
 
-      #cbCont {
-        #cbInner {
+      .cbCont {
+        margin: 5px 0;
+        .cbInner {
           display: flex;
           justify-content: start;
           .cbText {
@@ -37,8 +38,14 @@
           }
           .todoTxt {
             color: #000;
+            p {
+              margin-bottom: 0;
+            }
           }
         }
+      }
+      #btnTodo {
+        padding-top: 10px;
       }
     }
     &:before,

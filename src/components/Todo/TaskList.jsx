@@ -30,11 +30,11 @@ const TaskList = (props) => {
     <div className="listCont">
       {list.length ? check : "No tasks"}
       {list.length ? (
-        <p>
+        <div id="btnTodo">
           <button className="button" onClick={onClickRemoveItem}>
             Delete done tasks
           </button>
-        </p>
+        </div>
       ) : null}
     </div>
   );

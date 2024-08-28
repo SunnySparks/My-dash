@@ -4,6 +4,7 @@
   width: 320px;
   border-radius: 10px;
   margin: 20px;
+  background: #fff;
   #calcScreen {
     height: 180px;
     padding: 10px;
@@ -42,6 +43,7 @@
     #numBtn {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       .numBtn {
         width: 30%;
         margin: 2px;
@@ -62,14 +64,14 @@
           position: absolute;
           bottom: 0;
           left: -52px;
-          width: 46.4px !important;
+          width: 46.4px;
         }
       }
       #⌫ {
         position: absolute;
         left: -103px;
         bottom: 0;
-        width: 46.4px !important;
+        width: 46.4px;
       }
     }
   }

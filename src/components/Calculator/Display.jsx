@@ -16,7 +16,7 @@ const Display = ({
           <p>{valorDisplay !== "0" ? valorDisplay : ""}</p>
         </div>
         <div id="simbolo">
-          {simboloDisplay === "=" ? simboloDisplay : simboloPrev}
+          <p>{simboloDisplay === "=" ? simboloDisplay : simboloPrev}</p>
         </div>
         <div id="segundoValor">
           <p>{segundoValor !== "0" ? segundoValor : ""}</p>
