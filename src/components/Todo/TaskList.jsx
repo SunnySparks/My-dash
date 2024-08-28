@@ -1,5 +1,7 @@
-import React from "react";
+import "./styles.scss";
 import CheckBox from "./CheckBox";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const TaskList = (props) => {
   const list = props.list;
@@ -28,11 +30,11 @@ const TaskList = (props) => {
     <div className="listCont">
       {list.length ? check : "No tasks"}
       {list.length ? (
-        <p>
+        <div id="btnTodo">
           <button className="button" onClick={onClickRemoveItem}>
             Delete done tasks
           </button>
-        </p>
+        </div>
       ) : null}
     </div>
   );

@@ -1,4 +1,7 @@
 import { useState } from "react";
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const Symbols = ({
   setSimboloDisplay,
@@ -10,58 +13,38 @@ const Symbols = ({
   simboloPrev,
   setSimboloPrev,
   setValorTotal,
+  valorTotal,
   setCheck,
 }) => {
   let total = 0;
 
   const erase = () => {
-    setValorDisplay((prev) => {
-      let valorTemp = valorDisplay;
-      let valorArray = [];
-      console.log("valor temp1", prev);
-      console.log("simboloPrev length", simboloPrev.length);
-      console.log("segundoValor length", segundoValor.length);
-      //console.log("segundoValor", segundoValor);
-      if (prev !== "0" && simboloPrev.length == 0 && segundoValor == 0) {
-        console.log("valor temp1", prev);
-        let simboloAnterior = simbolo;
-        for (let i = 0; i < prev.length - 1; i++) {
-          console.log("prev[i]", prev[i]);
-          valorArray.push(prev[i]);
-        }
-        setValorDisplay(valorArray.toString().replace(/,/g, ""));
-        if (prev.length == 0) {
-          setValorDisplay("0");
-        }
-      } else if (prev !== "0" && simboloPrev.length > 0 && segundoValor == 0) {
-        console.log("simboloPrev", simboloPrev);
-        setSimboloPrev("");
-        setValorDisplay(prev);
-      } else if (
-        segundoValor !== "0" &&
-        simboloPrev.length > 0 &&
-        prev !== "0"
-      ) {
-        let valorTemp = segundoValor;
-        let simboloAnterior = simbolo;
-        for (let i = 0; i < valorTemp.length - 1; i++) {
-          valorArray.push(valorTemp[i]);
-        }
-        setSegundoValor(valorArray.toString().replace(/,/g, ""));
-        setValorDisplay(prev);
-      } else if (
-        prev == "0" &&
-        simboloPrev.length == 0 &&
-        segundoValor.length == 0
-      ) {
-        reset();
+    console.log("valorDisplay", typeof valorDisplay);
+    console.log("segundoValor", typeof segundoValor);
+    if (
+      valorTotal !== "0" &&
+      valorDisplay.length > 0 &&
+      segundoValor.length > 0
+    ) {
+      let totalArr = valorTotal.toString().split("");
+      let delTotal = [];
+      for (let i = 0; i < totalArr.length - 1; i++) {
+        delTotal.push(totalArr[i]);
       }
-    });
-
-    /*if (valorDisplay !== "0" && simboloPrev == "" && segundoValor == 0) {
-      let simboloAnterior = simbolo;
-      for (let i = 0; i < valorTemp.length - 1; i++) {
-        valorArray.push(valorTemp[i]);
+      setValorTotal(delTotal.toString().replace(/,/g, ""));
+    }
+    let valorTemp = valorDisplay;
+    let valorArray = [];
+    if (
+      valorDisplay !== "0" &&
+      simboloPrev.length == 0 &&
+      segundoValor == 0 &&
+      valorTotal.length == 0
+    ) {
+      console.log("valor temp1", valorDisplay);
+      for (let i = 0; i < valorDisplay.length - 1; i++) {
+        console.log("prev[i]", valorDisplay[i]);
+        valorArray.push(valorDisplay[i]);
       }
       setValorDisplay(valorArray.toString().replace(/,/g, ""));
       if (valorDisplay.length == 0) {
@@ -70,13 +53,17 @@ const Symbols = ({
     } else if (
       valorDisplay !== "0" &&
       simboloPrev.length > 0 &&
-      segundoValor.length == 0
+      segundoValor == 0 &&
+      valorTotal.length == 0
     ) {
+      console.log("simboloPrev", simboloPrev);
       setSimboloPrev("");
+      setValorDisplay(valorDisplay);
     } else if (
       segundoValor !== "0" &&
       simboloPrev.length > 0 &&
-      valorDisplay !== "0"
+      valorDisplay !== "0" &&
+      valorTotal.length == 0
     ) {
       let valorTemp = segundoValor;
       let simboloAnterior = simbolo;
@@ -84,7 +71,14 @@ const Symbols = ({
         valorArray.push(valorTemp[i]);
       }
       setSegundoValor(valorArray.toString().replace(/,/g, ""));
-    }*/
+      setValorDisplay(valorDisplay);
+    } else if (
+      valorDisplay == "0" &&
+      simboloPrev.length == 0 &&
+      segundoValor.length == 0
+    ) {
+      reset();
+    }
   };
 
   const posNeg = () => {
@@ -129,6 +123,7 @@ const Symbols = ({
   const afterOpSetter = () => {
     //setValorDisplay("0");
     setValorTotal(total);
+    console.log("valor total", valorTotal);
     //setSimboloDisplay("");
     //setSegundoValor("0");
     setCheck(false);

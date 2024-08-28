@@ -1,0 +1,22 @@
+//Calendar Layout
+#caleCont {
+  margin: 30px 0;
+  @media (min-width: 992px) {
+    width: 500px !important;
+  }
+  .fc-toolbar.fc-header-toolbar {
+    @media (max-width: 1439px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .fc-toolbar-chunk {
+      @media (max-width: 1439px) {
+        display: flex;
+      }
+      h2 {
+        color: #000;
+        margin: 10px 0;
+      }
+    }
+  }
+}

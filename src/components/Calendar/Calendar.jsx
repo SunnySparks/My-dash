@@ -5,6 +5,9 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import "bootstrap/dist/css/bootstrap.css";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 function Calendar() {
   return (

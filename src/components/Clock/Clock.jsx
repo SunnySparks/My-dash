@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const Clock = () => {
   let time = new Date().toLocaleTimeString();

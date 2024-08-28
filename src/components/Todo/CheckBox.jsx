@@ -1,4 +1,6 @@
-import React from "react";
+import "./styles.scss";
+import "../../ThemesStyles/light.scss";
+import "../../ThemesStyles/super.scss";
 
 const CheckBox = (props) => {
   const {
@@ -6,8 +8,8 @@ const CheckBox = (props) => {
     data: { id, taskInfo, done },
   } = props;
   return (
-    <div id="cbCont">
-      <div id="cbInner">
+    <div class="cbCont">
+      <div class="cbInner">
         <input
           className="cbText"
           name={id}
@@ -15,7 +17,9 @@ const CheckBox = (props) => {
           defaultChecked={done}
           onChange={onChange}
         />
-        <div className="todoTxt">{taskInfo}</div>
+        <div className="todoTxt">
+          <p>{taskInfo}</p>
+        </div>
       </div>
     </div>
   );

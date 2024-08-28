@@ -1,0 +1,78 @@
+//Calculator Layout
+#calcCont {
+  border: 2px solid #fff;
+  width: 320px;
+  border-radius: 10px;
+  margin: 20px;
+  background: #fff;
+  #calcScreen {
+    height: 180px;
+    padding: 10px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    #calcOperation {
+      display: flex;
+      justify-content: space-evenly;
+      > div {
+        width: 33%;
+        margin: 10px;
+        border-radius: 5px;
+        height: 26px;
+        p {
+          overflow: hidden;
+        }
+      }
+    }
+    #calcResult {
+      > div {
+        margin: 10px;
+        border-radius: 5px;
+        height: 26px;
+      }
+      #valorTotal {
+        p {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  #calcBtns {
+    display: flex;
+    #numBtn {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .numBtn {
+        width: 30%;
+        margin: 2px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    #symBtn {
+      display: flex;
+      position: relative;
+      flex-wrap: wrap;
+      .symBtn {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        margin: 2px;
+        &:nth-of-type(7) {
+          position: absolute;
+          bottom: 0;
+          left: -52px;
+          width: 46.4px;
+        }
+      }
+      #⌫ {
+        position: absolute;
+        left: -103px;
+        bottom: 0;
+        width: 46.4px;
+      }
+    }
+  }
+}

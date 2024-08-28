@@ -1,0 +1,75 @@
+//to-do list Layout
+#todoCont {
+  margin: 30px 0;
+  @media (min-width: 1440px) {
+    width: 500px !important;
+  }
+  #todoListWrapper {
+    background: #e6dfd3;
+    position: relative;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    padding: 20px;
+    border: 1px solid #bbb;
+    h2 {
+      text-transform: uppercase;
+    }
+    form {
+      #todoWrapper {
+        #todoInner {
+          input {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    .listCont {
+      padding-top: 20px;
+      color: #000;
+      font-weight: 700;
+
+      .cbCont {
+        margin: 5px 0;
+        .cbInner {
+          display: flex;
+          justify-content: start;
+          .cbText {
+            margin-right: 20px;
+          }
+          .todoTxt {
+            color: #000;
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      #btnTodo {
+        padding-top: 10px;
+      }
+    }
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+      position: absolute;
+      height: 95%;
+      width: 99%;
+      background-color: #e6dfd3;
+      border: 1px solid #bbb;
+    }
+    &:before {
+      right: 15px;
+      top: 0;
+      transform: rotate(-1deg);
+      z-index: -1;
+    }
+    &:after {
+      top: 5px;
+      right: -5px;
+      transform: rotate(1deg);
+      z-index: -2;
+    }
+  }
+}
