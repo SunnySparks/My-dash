@@ -249,6 +249,9 @@ $hot-pink: #ff00dd;
       6px calc(100% - 12px),
       0px calc(100% - 12px)
     );
+    @media (min-width: 992px) {
+      width: 540px !important;
+    }
     .fc-header-toolbar {
       .fc-toolbar-chunk {
         //First row of buttons containing today, < and >
@@ -284,6 +287,9 @@ $hot-pink: #ff00dd;
           }
         }
       }
+    }
+    .fc-scroller-liquid-absolute {
+      overflow: hidden !important;
     }
     .fc-view-harness {
       .fc-timeGridDay-view,
