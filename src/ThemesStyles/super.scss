@@ -171,11 +171,35 @@ $hot-pink: #ff00dd;
           }
         }
         #btnTodo {
+          position: relative;
+          bottom: -90px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
           button {
-            background: $pink-btn;
-            color: #fff;
-            box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
-            border: 1px solid #dedede;
+            background: transparent;
+            color: transparent;
+            border: none;
+            width: 44.8px;
+            overflow: hidden;
+            height: 44.8px;
+            border-radius: 50%;
+            z-index: 2;
+          }
+          &::before {
+            content: "C";
+            display: block;
+            position: absolute;
+            background: #fff;
+            width: 44.8px;
+            height: 44.8px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 30px;
+            z-index: 1;
           }
         }
       }
