@@ -28,7 +28,7 @@ const TaskList = (props) => {
   ));
   return (
     <div className="listCont">
-      {list.length ? check : "No tasks"}
+      {list.length ? check : <p id="taskNotice">"No tasks!"</p>}
       {list.length ? (
         <div id="btnTodo">
           <button className="button" onClick={onClickRemoveItem}>

@@ -6,6 +6,11 @@
   src: url("../fonts/digital-7\ \(mono\).ttf");
 }
 
+$digital-color: #19d88b;
+$blue-btn: #0942c7;
+$pink-btn: #f262ff;
+$hot-pink: #ff00dd;
+
 .super-theme {
   background: url(../src/assets/bg/superbg.jpg) no-repeat;
   background-size: cover;
@@ -22,7 +27,7 @@
     border: 10px solid #fff;
     background: #000;
     h1 {
-      color: #19d88b !important;
+      color: $digital-color !important;
       margin-bottom: 0;
       padding: 15px;
     }
@@ -114,11 +119,11 @@
         box-shadow: 3px 3px 0px 0px rgb(0 0 0);
       }
       .numBtn {
-        background: #0942c7;
+        background: $blue-btn;
         border-radius: 0;
       }
       .symBtn {
-        background: #f262ff;
+        background: $pink-btn;
         border-radius: 0;
         &:nth-of-type(7) {
           left: -60px !important;
@@ -148,13 +153,16 @@
       border: none;
       form {
         button {
-          background: #0942c7;
+          background: $blue-btn;
           color: #fff;
           box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
           border: 1px solid #dedede;
         }
       }
       .listCont {
+        #taskNotice {
+          font-size: 25px;
+        }
         .cbCont {
           .cbInner {
             .todoTxt {
@@ -164,7 +172,7 @@
         }
         #btnTodo {
           button {
-            background: #f262ff;
+            background: $pink-btn;
             color: #fff;
             box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
             border: 1px solid #dedede;
@@ -189,6 +197,110 @@
       transform: translate(-50%, -50%);
       background: #fff;
       border-radius: 50%;
+    }
+  }
+  #caleCont {
+    background: #000;
+    padding: 20px 0;
+    border: 11px solid #ff03f4;
+    clip-path: polygon(
+      0px 12px,
+      6px 12px,
+      6px 6px,
+      12px 6px,
+      12px 0px,
+      calc(100% - 12px) 0px,
+      calc(100% - 12px) 6px,
+      calc(100% - 6px) 6px,
+      calc(100% - 6px) 12px,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 6px),
+      calc(100% - 12px) calc(100% - 6px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      12px calc(100% - 6px),
+      6px calc(100% - 6px),
+      6px calc(100% - 12px),
+      0px calc(100% - 12px)
+    );
+    .fc-header-toolbar {
+      .fc-toolbar-chunk {
+        //First row of buttons containing today, < and >
+        &:first-of-type {
+          .fc-today-button {
+            background: $digital-color;
+            color: #000;
+            opacity: 1 !important;
+          }
+          .fc-button-group {
+            .fc-button-primary {
+              background: $hot-pink;
+              color: #000;
+            }
+          }
+        }
+        //Calendar Title
+        &:nth-of-type(2) {
+          h2 {
+            color: #fff;
+            font-size: 35px;
+          }
+        }
+        //Last row of btns, containing month, week and day toggles
+        &:last-of-type {
+          .fc-button-group {
+            .fc-button-active {
+              background: $blue-btn;
+            }
+            button {
+              background: $pink-btn;
+            }
+          }
+        }
+      }
+    }
+    .fc-view-harness {
+      .fc-timeGridDay-view,
+      .fc-timeGridWeek-view,
+      .fc-timeGridMonth-view,
+      .fc-dayGridMonth-view {
+        table {
+          thead {
+            //Color for the day markers
+            a {
+              color: $digital-color;
+            }
+          }
+          tbody {
+            //This is the background color for today
+            .fc-day-today {
+              background-color: #ce9401;
+            }
+            //Color for the days of the month
+            .fc-daygrid-day-number {
+              color: $blue-btn;
+              opacity: 1;
+            }
+            //Color of the days from other months
+            .fc-day-other {
+              a {
+                color: #fff !important;
+              }
+            }
+          }
+          //Month calendar days from other month's opacity control
+          .fc-day-other .fc-daygrid-day-top {
+            opacity: 1 !important;
+          }
+          //Week calendar, left column color
+          .fc-timegrid-axis-cushion,
+          .fc-timegrid-axis-cushion {
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }

@@ -20,6 +20,13 @@
           input {
             margin: 0 10px;
           }
+          button {
+            transition: all 0.2s ease-in-out;
+            &:active {
+              transform: translate(2px, 2px);
+              box-shadow: none;
+            }
+          }
         }
       }
     }
