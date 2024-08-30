@@ -4,6 +4,7 @@ import FormTodo from "./FormTodo";
 import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
+import "../../ThemesStyles/gradient.scss";
 
 const TodoContainer = () => {
   const [list, setList] = useState([]);

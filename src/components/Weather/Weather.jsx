@@ -16,6 +16,7 @@ import hot from "../../assets/Weather/hot.png";
 import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
+import "../../ThemesStyles/gradient.scss";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -68,7 +69,13 @@ const Weather = () => {
       case "drizzle":
         return <img src={drizzle} alt="Drizzle" />;
         break;
+      case "moderate rain":
+        return <img src={drizzle} alt="Drizzle" />;
+        break;
       case "light rain":
+        return <img src={drizzle} alt="Light rain" />;
+        break;
+      case "light intensity shower rain":
         return <img src={drizzle} alt="Light rain" />;
         break;
       case "scattered clouds":

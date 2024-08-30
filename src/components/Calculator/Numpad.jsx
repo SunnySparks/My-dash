@@ -3,6 +3,7 @@ import Symbols from "./Symbols";
 import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
+import "../../ThemesStyles/gradient.scss";
 
 const listaBotones = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const listaSimbolos = ["+-", "%", "/", "*", "-", "+", "=", ".", "C", "⌫"];

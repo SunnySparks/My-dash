@@ -501,6 +501,13 @@ $hot-pink: #ff00dd;
       }
       button {
         background: $pink-btn;
+        box-shadow: 3px 3px 0px 0px rgb(255, 255, 255);
+        border: 1px solid #000000;
+        transition: all 0.2s ease-in-out;
+        &:active {
+          transform: translate(2px, 2px);
+          box-shadow: none;
+        }
       }
     }
     #weathercondition {

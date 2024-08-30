@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
+import "../../ThemesStyles/gradient.scss";
 
 const Symbols = ({
   setSimboloDisplay,

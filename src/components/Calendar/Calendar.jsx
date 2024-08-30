@@ -8,6 +8,7 @@ import googleCalendarPlugin from "@fullcalendar/google-calendar";
 import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
+import "../../ThemesStyles/gradient.scss";
 
 function Calendar() {
   return (

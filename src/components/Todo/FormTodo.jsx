@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
+import "../../ThemesStyles/gradient.scss";
 
 const FormTodo = (props) => {
   const handleAddItem = props.handleAddItem;
