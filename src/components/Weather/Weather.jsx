@@ -92,6 +92,9 @@ const Weather = () => {
       case "mist":
         return <img src={mist} alt="Mist" />;
         break;
+      case "thunderstorm with rain":
+        return <img src={storm} alt="Stormy" />;
+        break;
     }
   };
 
