@@ -1,4 +1,55 @@
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf");
+  src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
 .gradient-theme {
   background: url(../src/assets/bg/gradientbg.jpg) no-repeat;
   background-size: cover;
+  * {
+    font-family: "open-sans";
+  }
+  #calcCont {
+    background: linear-gradient(
+      0deg,
+      hsl(330deg, 77%, 49%) 0%,
+      hsl(197deg, 85%, 51%) 100%
+    );
+    box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    #calcScreen {
+      margin: 20px auto 15px;
+      border-bottom: 1px solid #fff;
+      #calcOperation {
+        font-size: 40px;
+        margin-top: -60px;
+      }
+      #calcResult {
+        font-size: 50px;
+      }
+    }
+    #calcBtns {
+      #numBtn {
+        button {
+          background: transparent;
+          border-radius: 50%;
+        }
+      }
+      #symBtn {
+        button {
+          font-weight: 700;
+          background: transparent;
+          border-radius: 50%;
+        }
+        #⌫ {
+          border-radius: 50%;
+          left: -174px;
+        }
+      }
+    }
+  }
 }
