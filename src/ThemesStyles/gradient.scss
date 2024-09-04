@@ -3,6 +3,12 @@
   src: url("../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf");
   src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
 }
+$text-color: #766f94;
+
+$digital-color: #19d88b;
+$blue-btn: #0942c7;
+$pink-btn: #f262ff;
+$hot-pink: #ff00dd;
 
 .gradient-theme {
   background: url(../src/assets/bg/gradientbg.jpg) no-repeat;
@@ -48,6 +54,173 @@
         #⌫ {
           border-radius: 50%;
           left: -174px;
+        }
+      }
+    }
+  }
+  #todoCont {
+    #todoListWrapper {
+      background-color: #1badea;
+      background-image: radial-gradient(#dd1d7d 0.5px, #e9dfe4 0.5px);
+      background-size: 10px 10px;
+      h2 {
+        color: $text-color;
+      }
+      form {
+        #todoWrapper {
+          #todoInner {
+            input {
+              background: #fff;
+              border-radius: 10px;
+              color: $text-color;
+            }
+            button {
+              background: transparent;
+              color: $text-color;
+              -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+              -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+              border: 0.5px solid #4080f8;
+            }
+          }
+        }
+      }
+      .listCont {
+        .cbCont {
+          .cbInner {
+            input[type="checkbox"] {
+              accent-color: #fff !important;
+            }
+            .todoTxt {
+              p {
+                color: $text-color;
+              }
+            }
+          }
+        }
+        #btnTodo {
+          button {
+            background: transparent;
+            color: $text-color;
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            border: 0.5px solid #4080f8;
+          }
+        }
+      }
+      &:before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+  #caleCont {
+    background: #000;
+    padding: 20px 0;
+    border: 11px solid #ff03f4;
+    clip-path: polygon(
+      0px 12px,
+      6px 12px,
+      6px 6px,
+      12px 6px,
+      12px 0px,
+      calc(100% - 12px) 0px,
+      calc(100% - 12px) 6px,
+      calc(100% - 6px) 6px,
+      calc(100% - 6px) 12px,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 12px),
+      calc(100% - 6px) calc(100% - 6px),
+      calc(100% - 12px) calc(100% - 6px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      12px calc(100% - 6px),
+      6px calc(100% - 6px),
+      6px calc(100% - 12px),
+      0px calc(100% - 12px)
+    );
+    @media (min-width: 992px) {
+      width: 540px !important;
+    }
+    .fc-header-toolbar {
+      .fc-toolbar-chunk {
+        //First row of buttons containing today, < and >
+        &:first-of-type {
+          .fc-today-button {
+            background: $digital-color;
+            color: #000;
+            opacity: 1 !important;
+          }
+          .fc-button-group {
+            .fc-button-primary {
+              background: $hot-pink;
+              color: #000;
+            }
+          }
+        }
+        //Calendar Title
+        &:nth-of-type(2) {
+          h2 {
+            color: #fff;
+            font-size: 35px;
+          }
+        }
+        //Last row of btns, containing month, week and day toggles
+        &:last-of-type {
+          .fc-button-group {
+            .fc-button-active {
+              background: $blue-btn;
+            }
+            button {
+              background: $pink-btn;
+            }
+          }
+        }
+      }
+    }
+    .fc-scroller-liquid-absolute {
+      overflow: hidden !important;
+    }
+    .fc-view-harness {
+      .fc-timeGridDay-view,
+      .fc-timeGridWeek-view,
+      .fc-timeGridMonth-view,
+      .fc-dayGridMonth-view {
+        table {
+          thead {
+            //Color for the day markers
+            a {
+              color: $digital-color;
+            }
+          }
+          tbody {
+            //This is the background color for today
+            .fc-day-today {
+              background-color: #ce9401;
+            }
+            //Color for the days of the month
+            .fc-daygrid-day-number {
+              color: $blue-btn;
+              opacity: 1;
+            }
+            //Color of the days from other months
+            .fc-day-other {
+              a {
+                color: #fff !important;
+              }
+            }
+          }
+          //Month calendar days from other month's opacity control
+          .fc-day-other .fc-daygrid-day-top {
+            opacity: 1 !important;
+          }
+          //Week calendar, left column color
+          .fc-timegrid-axis-cushion,
+          .fc-timegrid-axis-cushion {
+            color: #fff;
+          }
         }
       }
     }
