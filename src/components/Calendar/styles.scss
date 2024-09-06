@@ -1,21 +1,109 @@
 //Calendar Layout
 #caleCont {
+  .fc-toolbar.fc-header-toolbar {
+    .fc-toolbar-chunk {
+    }
+  }
+}
+
+#caleCont {
   margin: 30px 0;
+  background: #fff;
   @media (min-width: 992px) {
     width: 520px !important;
   }
-  .fc-toolbar.fc-header-toolbar {
-    @media (max-width: 1439px) {
-      display: flex;
-      flex-direction: column;
-    }
+  .fc-header-toolbar {
+    display: flex;
+    flex-direction: column;
     .fc-toolbar-chunk {
+      //First row of buttons containing today, < and >
       @media (max-width: 1439px) {
         display: flex;
       }
-      h2 {
-        color: #000;
-        margin: 10px 0;
+      button {
+        &:not(:first-of-type) {
+          color: #000;
+        }
+        &:active {
+          transform: translate(2px, 2px);
+          box-shadow: none;
+        }
+      }
+      &:first-of-type {
+        padding-top: 10px;
+        .fc-today-button {
+          //background: $digital-color;
+          //color: #000;
+          opacity: 1 !important;
+        }
+        .fc-button-group {
+          .fc-button-primary {
+            //background: $hot-pink;
+            color: #000;
+          }
+        }
+      }
+      //Calendar Title
+      &:nth-of-type(2) {
+        h2 {
+          color: #000;
+          margin: 10px 0;
+        }
+      }
+      //Last row of btns, containing month, week and day toggles
+      &:last-of-type {
+        .fc-button-group {
+          .fc-button-active {
+            //background: $blue-btn;
+          }
+          button {
+            //background: $pink-btn;
+          }
+        }
+      }
+    }
+  }
+  .fc-scroller-liquid-absolute {
+    overflow: hidden !important;
+  }
+  .fc-view-harness {
+    .fc-timeGridDay-view,
+    .fc-timeGridWeek-view,
+    .fc-timeGridMonth-view,
+    .fc-dayGridMonth-view {
+      table {
+        thead {
+          //Color for the day markers
+          a {
+            //color: $digital-color;
+          }
+        }
+        tbody {
+          //This is the background color for today
+          .fc-day-today {
+            //background-color: #ce9401;
+          }
+          //Color for the days of the month
+          .fc-daygrid-day-number {
+            //color: $blue-btn;
+            opacity: 1;
+          }
+          //Color of the days from other months
+          .fc-day-other {
+            a {
+              //color: #fff !important;
+            }
+          }
+        }
+        //Month calendar days from other month's opacity control
+        .fc-day-other .fc-daygrid-day-top {
+          opacity: 1 !important;
+        }
+        //Week calendar, left column color
+        .fc-timegrid-axis-cushion,
+        .fc-timegrid-axis-cushion {
+          //color: #fff;
+        }
       }
     }
   }

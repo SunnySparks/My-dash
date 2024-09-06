@@ -408,6 +408,15 @@ $hot-pink: #ff00dd;
     .fc-header-toolbar {
       .fc-toolbar-chunk {
         //First row of buttons containing today, < and >
+        button {
+          box-shadow: 3px 3px 0px 0px rgb(255, 255, 255);
+          border: 1px solid #dedede;
+          transition: all 0.2s ease-in-out;
+          &:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+          }
+        }
         &:first-of-type {
           .fc-today-button {
             background: $digital-color;

@@ -116,35 +116,41 @@ $hot-pink: #ffbcf6;
     }
   }
   #caleCont {
-    background-color: #ff9a8b;
-    background-image: linear-gradient(
-      90deg,
-      #ff9a8b 0%,
-      #ff6a88 55%,
-      #ff99ac 100%
-    );
-
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+      radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
     .fc-header-toolbar {
       padding-top: 10px;
       .fc-toolbar-chunk {
         //First row of buttons containing today, < and >
         &:first-of-type {
           .fc-today-button {
-            background: $digital-color;
-            color: #000;
+            background: #7c65b3;
+            color: #fff;
             opacity: 1 !important;
+            -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+            border: 0.5px solid #4080f8;
           }
           .fc-button-group {
             .fc-button-primary {
               background: $hot-pink;
               color: #000;
+              -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              border: 0.5px solid #4080f8;
+              margin: 0 2px;
             }
           }
         }
         //Calendar Title
         &:nth-of-type(2) {
           h2 {
-            color: #fff;
+            color: $text-color;
             font-size: 35px;
           }
         }
@@ -152,10 +158,21 @@ $hot-pink: #ffbcf6;
         &:last-of-type {
           .fc-button-group {
             .fc-button-active {
-              background: $blue-btn;
+              background: #29a3e2;
+              margin: 0 8px;
+              -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              border: 0.5px solid #4080f8;
             }
             button {
-              background: $pink-btn;
+              background: #d92080;
+              color: #fff;
+              margin: 0 2px;
+              -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+              border: 0.5px solid #4080f8;
             }
           }
         }
@@ -179,7 +196,8 @@ $hot-pink: #ffbcf6;
           tbody {
             //This is the background color for today
             .fc-day-today {
-              background-color: #ce9401;
+              background-color: #faf391;
+              border: 1px solid #000;
             }
             //Color for the days of the month
             .fc-daygrid-day-number {
