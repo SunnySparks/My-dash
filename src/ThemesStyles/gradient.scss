@@ -215,8 +215,12 @@ $hot-pink: #ffbcf6;
       #784ba0 50%,
       #2b86c5 100%
     );
+    overflow: hidden;
     #wtitle {
       color: #d5d4d4;
+    }
+    #weathercondition {
+      z-index: 2;
     }
     .rain {
       background: rgb(249, 69, 69);
