@@ -5,10 +5,10 @@
 }
 $text-color: #766f94;
 
-$digital-color: #19d88b;
+$digital-color: #90dcbe;
 $blue-btn: #0942c7;
 $pink-btn: #f262ff;
-$hot-pink: #ff00dd;
+$hot-pink: #ffbcf6;
 
 .gradient-theme {
   background: url(../src/assets/bg/gradientbg.jpg) no-repeat;
@@ -116,10 +116,16 @@ $hot-pink: #ff00dd;
     }
   }
   #caleCont {
-    background: #000;
-    padding: 20px 0;
-    border: 11px solid #ff03f4;
+    background-color: #ff9a8b;
+    background-image: linear-gradient(
+      90deg,
+      #ff9a8b 0%,
+      #ff6a88 55%,
+      #ff99ac 100%
+    );
+
     .fc-header-toolbar {
+      padding-top: 10px;
       .fc-toolbar-chunk {
         //First row of buttons containing today, < and >
         &:first-of-type {
@@ -196,6 +202,62 @@ $hot-pink: #ff00dd;
           .fc-timegrid-axis-cushion {
             color: #fff;
           }
+        }
+      }
+    }
+  }
+  #weathCont {
+    position: relative;
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+    #wtitle {
+      color: #d5d4d4;
+    }
+    .rain {
+      background: rgb(249, 69, 69);
+      background: linear-gradient(
+        to bottom,
+        rgba(12, 12, 12, 0) 0%,
+        #ffffff 100%
+      );
+      height: 50px;
+      position: absolute;
+      width: 1px;
+      display: block !important;
+    }
+
+    $rain: 150;
+
+    @for $i from 1 through $rain {
+      $top: (random(50) + 50) * 1%;
+      $left: random(100) * 1%;
+      $opacity: (random(30) + 30) * 0.01;
+      $delay: random(20) - 1s;
+
+      .rain:nth-of-type(#{$i}) {
+        animation-name: rain-#{$i};
+        animation-delay: $delay;
+        animation-duration: random(6) + 4s;
+        animation-iteration-count: infinite;
+        left: $left;
+        opacity: $opacity;
+        top: -$top;
+      }
+
+      @keyframes rain-#{$i} {
+        from {
+          left: $left;
+          opacity: $opacity;
+          top: -$top;
+        }
+        to {
+          opacity: 0;
+          top: $top + 40%;
         }
       }
     }
