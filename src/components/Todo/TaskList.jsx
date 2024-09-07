@@ -3,6 +3,8 @@ import CheckBox from "./CheckBox";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
 import "../../ThemesStyles/gradient.scss";
+import "../../ThemesStyles/dark.scss";
+import "../../ThemesStyles/auto.scss";
 
 const TaskList = (props) => {
   const list = props.list;

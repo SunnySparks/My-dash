@@ -3,6 +3,8 @@ import { useState } from "react";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
 import "../../ThemesStyles/gradient.scss";
+import "../../ThemesStyles/dark.scss";
+import "../../ThemesStyles/auto.scss";
 
 const Clock = () => {
   let time = new Date().toLocaleTimeString();

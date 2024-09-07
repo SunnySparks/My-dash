@@ -3,6 +3,8 @@ import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
 import "../../ThemesStyles/gradient.scss";
+import "../../ThemesStyles/dark.scss";
+import "../../ThemesStyles/auto.scss";
 
 const FormTodo = (props) => {
   const handleAddItem = props.handleAddItem;

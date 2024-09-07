@@ -9,12 +9,24 @@ $digital-color: #90dcbe;
 $blue-btn: #0942c7;
 $pink-btn: #f262ff;
 $hot-pink: #ffbcf6;
+$weather-text: #d5d4d4;
 
 .gradient-theme {
   background: url(../src/assets/bg/gradientbg.jpg) no-repeat;
   background-size: cover;
   * {
     font-family: "open-sans";
+  }
+  #clockCont {
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+      radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    padding: 10px;
+    color: #766f94;
+    border: 1px solid #4080f8;
+    box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
   }
   #calcCont {
     background: linear-gradient(
@@ -59,6 +71,7 @@ $hot-pink: #ffbcf6;
     }
   }
   #todoCont {
+    box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
     #todoListWrapper {
       background-color: #1badea;
       background-image: radial-gradient(#dd1d7d 0.5px, #e9dfe4 0.5px);
@@ -121,6 +134,7 @@ $hot-pink: #ffbcf6;
       radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
+    box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
     .fc-header-toolbar {
       padding-top: 10px;
       .fc-toolbar-chunk {
@@ -234,11 +248,32 @@ $hot-pink: #ffbcf6;
       #2b86c5 100%
     );
     overflow: hidden;
+    box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
     #wtitle {
-      color: #d5d4d4;
+      color: $weather-text;
+    }
+    form {
+      button {
+        background-color: #e5e5f7;
+        background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+          radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        color: #000;
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+        border: 0.5px solid #4080f8;
+        transition: all 0.2s ease-in-out;
+        &:active {
+          transform: translate(2px, 2px);
+          box-shadow: none;
+        }
+      }
     }
     #weathercondition {
       z-index: 2;
+      color: $weather-text;
     }
     .rain {
       background: rgb(249, 69, 69);

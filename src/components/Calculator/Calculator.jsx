@@ -5,6 +5,8 @@ import "./styles.scss";
 import "../../ThemesStyles/light.scss";
 import "../../ThemesStyles/super.scss";
 import "../../ThemesStyles/gradient.scss";
+import "../../ThemesStyles/dark.scss";
+import "../../ThemesStyles/auto.scss";
 
 const Calculator = (props) => {
   const [valorDisplay, setValorDisplay] = useState("0");
