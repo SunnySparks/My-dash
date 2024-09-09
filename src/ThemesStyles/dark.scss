@@ -1,7 +1,10 @@
-$digital-color: #19d88b;
+$digital-color: #20ceb2;
 $blue-btn: #0942c7;
-$pink-btn: #f262ff;
-$hot-pink: #ff00dd;
+$pink-btn: #5f2664;
+$hot-pink: #600153;
+$dark-bg: #2b2b2b;
+$emerald: #194642;
+$light: #dedede;
 
 .dark-theme {
   #buttonCont {
@@ -10,240 +13,108 @@ $hot-pink: #ff00dd;
     }
   }
   #clockCont {
-    margin: 10px;
-    border: 10px solid #fff;
-    background: #000;
     h1 {
       color: $digital-color !important;
       margin-bottom: 0;
-      padding: 15px;
     }
   }
   #calcCont {
-    border: 10px solid #000;
-    clip-path: polygon(
-      0px 12px,
-      4px 12px,
-      4px 4px,
-      8px 4px,
-      12px 4px,
-      12px 0px,
-      calc(100% - 12px) 0px,
-      calc(100% - 12px) 4px,
-      calc(100% - 4px) 4px,
-      calc(100% - 4px) 8px,
-      calc(100% - 4px) 12px,
-      100% 12px,
-      100% calc(100% - 12px),
-      calc(100% - 4px) calc(100% - 12px),
-      calc(100% - 4px) calc(100% - 4px),
-      calc(100% - 8px) calc(100% - 4px),
-      calc(100% - 12px) calc(100% - 4px),
-      calc(100% - 12px) 100%,
-      12px 100%,
-      12px calc(100% - 4px),
-      4px calc(100% - 4px),
-      4px calc(100% - 8px),
-      4px calc(100% - 12px),
-      0px calc(100% - 12px)
-    );
+    background: $dark-bg;
+    border: none;
+    border: 1px solid;
+    border-radius: 0;
     #calcScreen {
-      //background: #76dfff;
-      background: #fdec56;
-      width: 95%;
-      color: #000;
-      border: 3px solid #fff;
-      border-radius: 15px;
-      border: 8px solid #000;
-      clip-path: polygon(
-        0px 12px,
-        6px 12px,
-        6px 6px,
-        12px 6px,
-        12px 0px,
-        calc(100% - 12px) 0px,
-        calc(100% - 12px) 6px,
-        calc(100% - 6px) 6px,
-        calc(100% - 6px) 12px,
-        100% 12px,
-        100% calc(100% - 12px),
-        calc(100% - 6px) calc(100% - 12px),
-        calc(100% - 6px) calc(100% - 6px),
-        calc(100% - 12px) calc(100% - 6px),
-        calc(100% - 12px) 100%,
-        12px 100%,
-        12px calc(100% - 6px),
-        6px calc(100% - 6px),
-        6px calc(100% - 12px),
-        0px calc(100% - 12px)
-      );
+      background: #121212;
+      margin: 0;
+      width: auto;
       #calcOperation {
-        margin-top: -20px;
-        #valor,
-        #simbolo,
-        #segundoValor {
-          p {
-            font-size: 40px;
-          }
+        div {
+          font-size: 30px;
+          font-weight: 800;
+          color: #fff;
         }
       }
       #calcResult {
-        #valorTotal {
-          p {
-            font-size: 40px;
-          }
-        }
+        font-size: 40px;
+        font-weight: 800;
+        color: #fff;
       }
     }
     #calcBtns {
-      margin: 20px 0;
-      button {
-        border: 3px solid #000;
-        display: flex;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      #numBtn {
         justify-content: center;
-        align-items: center;
-        font-weight: 800;
-        box-shadow: 3px 3px 0px 0px rgb(0 0 0);
-      }
-      .numBtn {
-        background: $blue-btn;
-        border-radius: 0;
-      }
-      .symBtn {
-        background: $pink-btn;
-        border-radius: 0;
-        &:nth-of-type(7) {
-          left: -60px !important;
-          width: 55.71px !important;
+        .numBtn {
+          background: #3e3e3e;
+          border-radius: 50%;
+          color: $light;
+          margin: 1px;
+          border: 1px solid $light;
         }
       }
       #symBtn {
+        .symBtn {
+          background: $emerald;
+          border: 1px solid $light;
+          &:nth-of-type(7) {
+            border-radius: 50%;
+            left: -58px;
+          }
+        }
         #⌫ {
-          left: -177px !important;
-          width: 55.71px !important;
+          border-radius: 50%;
+          left: -174px;
         }
       }
     }
   }
   #todoCont {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: auto;
-    border: 16px black solid;
-    border-top-width: 60px;
-    border-bottom-width: 60px;
-    border-radius: 36px;
-    background: #fff;
     #todoListWrapper {
-      background: #fff;
-      border: none;
+      background: $dark-bg;
+      h2 {
+        color: $light;
+      }
       form {
-        button {
-          background: $blue-btn;
-          color: #fff;
-          box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
-          border: 1px solid #dedede;
+        #todoWrapper {
+          #todoInner {
+            button {
+              background: $emerald;
+              color: $light;
+              border: 1px solid $light;
+            }
+          }
         }
       }
       .listCont {
-        #taskNotice {
-          font-size: 25px;
-        }
         .cbCont {
           .cbInner {
             .todoTxt {
-              font-size: 20px;
+              p {
+                color: $light;
+              }
             }
           }
         }
         #btnTodo {
-          position: relative;
-          bottom: -90px;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
           button {
-            background: transparent;
-            color: transparent;
-            border: none;
-            width: 44.8px;
-            overflow: hidden;
-            height: 44.8px;
-            border-radius: 50%;
-            z-index: 2;
-          }
-          &::before {
-            content: "C";
-            display: block;
-            position: absolute;
-            background: #fff;
-            width: 44.8px;
-            height: 44.8px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 800;
-            font-size: 30px;
-            z-index: 1;
           }
         }
       }
-      &:before {
-        display: none;
-      }
+      &::before,
       &:after {
-        display: none;
+        background: $dark-bg;
       }
-    }
-    &::before {
-      content: "";
-      display: block;
-      width: 35px;
-      height: 35px;
-      position: absolute;
-      left: 50%;
-      bottom: -65px;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      border-radius: 50%;
     }
   }
   #caleCont {
-    background: #000;
-    border: 11px solid #ff03f4;
-    clip-path: polygon(
-      0px 12px,
-      6px 12px,
-      6px 6px,
-      12px 6px,
-      12px 0px,
-      calc(100% - 12px) 0px,
-      calc(100% - 12px) 6px,
-      calc(100% - 6px) 6px,
-      calc(100% - 6px) 12px,
-      100% 12px,
-      100% calc(100% - 12px),
-      calc(100% - 6px) calc(100% - 12px),
-      calc(100% - 6px) calc(100% - 6px),
-      calc(100% - 12px) calc(100% - 6px),
-      calc(100% - 12px) 100%,
-      12px 100%,
-      12px calc(100% - 6px),
-      6px calc(100% - 6px),
-      6px calc(100% - 12px),
-      0px calc(100% - 12px)
-    );
-    @media (min-width: 992px) {
-      width: 540px !important;
-    }
+    background: $dark-bg;
     .fc-header-toolbar {
       .fc-toolbar-chunk {
         //First row of buttons containing today, < and >
         button {
-          box-shadow: 3px 3px 0px 0px rgb(255, 255, 255);
-          border: 1px solid #dedede;
+          border: 1px solid $light;
           transition: all 0.2s ease-in-out;
           &:active {
             transform: translate(2px, 2px);
@@ -259,7 +130,7 @@ $hot-pink: #ff00dd;
           .fc-button-group {
             .fc-button-primary {
               background: $hot-pink;
-              color: #000;
+              color: $light;
             }
           }
         }
@@ -278,6 +149,7 @@ $hot-pink: #ff00dd;
             }
             button {
               background: $pink-btn;
+              color: #fff;
             }
           }
         }
@@ -301,11 +173,11 @@ $hot-pink: #ff00dd;
           tbody {
             //This is the background color for today
             .fc-day-today {
-              background-color: #ce9401;
+              background-color: #59523f;
             }
             //Color for the days of the month
             .fc-daygrid-day-number {
-              color: $blue-btn;
+              color: $light;
               opacity: 1;
             }
             //Color of the days from other months
@@ -329,13 +201,14 @@ $hot-pink: #ff00dd;
     }
   }
   #weathCont {
-    background: #000;
+    background: $dark-bg;
     #wtitle {
-      color: $digital-color;
+      color: $light;
     }
     form {
       input {
-        background: $blue-btn;
+        background: #000;
+        border: 1px solid $light;
         color: #fff;
         &::placeholder {
           color: #fff;
@@ -343,8 +216,7 @@ $hot-pink: #ff00dd;
       }
       button {
         background: $pink-btn;
-        box-shadow: 3px 3px 0px 0px rgb(255, 255, 255);
-        border: 1px solid #000000;
+        border: 1px solid $light;
         transition: all 0.2s ease-in-out;
         &:active {
           transform: translate(2px, 2px);
@@ -355,44 +227,6 @@ $hot-pink: #ff00dd;
     #weathercondition {
       color: $digital-color;
       #wimg {
-        position: relative;
-        &::before {
-          content: " ";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          background: linear-gradient(
-              rgba(25, 216, 139, 1) 50%,
-              rgba(17, 212, 134, 0.25) 50%
-            ),
-            linear-gradient(
-              90deg,
-              rgba(17, 212, 134, 0.06),
-              rgba(25, 216, 139, 0.02),
-              rgba(17, 212, 134, 0.06)
-            );
-          z-index: 2;
-          background-size: 100% 2px, 3px 100%;
-          pointer-events: none;
-          border-radius: 25px;
-        }
-        &::after {
-          content: " ";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          background: rgba(18, 16, 16, 0.1);
-          opacity: 0;
-          z-index: 2;
-          pointer-events: none;
-          border-radius: 25px;
-        }
       }
     }
     #errorDisplay {
