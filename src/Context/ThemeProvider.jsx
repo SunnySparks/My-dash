@@ -21,7 +21,12 @@ const themes = [
   {
     name: "dark",
     className: "dark-theme",
-    index: "three ",
+    index: "three",
+  },
+  {
+    name: "auto",
+    className: "auto-theme",
+    index: "four",
   },
 ];
 

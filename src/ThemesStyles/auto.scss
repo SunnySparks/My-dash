@@ -1,0 +1,351 @@
+$digital-color: #20ceb2;
+$blue-btn: #0942c7;
+$pink-btn: #5f2664;
+$hot-pink: #600153;
+$dark-bg: #2b2b2b;
+$emerald: #194642;
+$light: #dedede;
+
+.auto-theme {
+  background: #fafafa;
+  .buttonCont {
+    h2 {
+      color: #000;
+      text-transform: uppercase;
+    }
+  }
+  #calcCont {
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    #calcScreen {
+      background: #121212;
+      margin: 0;
+      width: auto;
+      #calcOperation {
+        div {
+          font-size: 30px;
+          font-weight: 800;
+          color: #fff;
+        }
+      }
+      #calcResult {
+        font-size: 40px;
+        font-weight: 800;
+        color: #fff;
+      }
+    }
+    #calcBtns {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      #numBtn {
+        justify-content: center;
+        .numBtn {
+          background: #dcdcdd;
+          border-radius: 50%;
+          color: #758594;
+          margin: 1px;
+        }
+      }
+      #symBtn {
+        .symBtn {
+          background: #20ceb2;
+          &:nth-of-type(7) {
+            border-radius: 50%;
+            left: -58px;
+          }
+        }
+        #⌫ {
+          border-radius: 50%;
+          left: -174px;
+        }
+      }
+    }
+  }
+  #todoCont {
+    #todoListWrapper {
+      h2 {
+        color: #000;
+      }
+      form {
+        #todoWrapper {
+          #todoInner {
+            button {
+              background: #20ceb2;
+              color: #000;
+            }
+          }
+        }
+      }
+      .listCont {
+        #btnTodo {
+          button {
+          }
+        }
+      }
+    }
+  }
+  #caleCont {
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    .fc-header-toolbar.fc-toolbar {
+      .fc-toolbar-chunk {
+        &:first-of-type {
+          .fc-button-group {
+            button {
+              background: #20ceb2 !important;
+            }
+          }
+        }
+        &:last-of-type {
+          .fc-button-group {
+            button {
+              &:first-of-type {
+                background: #08332c !important;
+              }
+              &:not(:first-of-type) {
+                background: #20ceb2 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .auto-theme {
+    background: #000;
+    #buttonCont {
+      h2 {
+        color: #fff;
+      }
+    }
+    #clockCont {
+      h1 {
+        color: $digital-color !important;
+        margin-bottom: 0;
+      }
+    }
+    #calcCont {
+      background: $dark-bg;
+      border: none;
+      border: 1px solid;
+      border-radius: 0;
+      #calcScreen {
+        background: #121212;
+        margin: 0;
+        width: auto;
+        #calcOperation {
+          div {
+            font-size: 30px;
+            font-weight: 800;
+            color: #fff;
+          }
+        }
+        #calcResult {
+          font-size: 40px;
+          font-weight: 800;
+          color: #fff;
+        }
+      }
+      #calcBtns {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        #numBtn {
+          justify-content: center;
+          .numBtn {
+            background: #3e3e3e;
+            border-radius: 50%;
+            color: $light;
+            margin: 1px;
+            border: 1px solid $light;
+          }
+        }
+        #symBtn {
+          .symBtn {
+            background: $emerald;
+            border: 1px solid $light;
+            &:nth-of-type(7) {
+              border-radius: 50%;
+              left: -58px;
+            }
+          }
+          #⌫ {
+            border-radius: 50%;
+            left: -174px;
+          }
+        }
+      }
+    }
+    #todoCont {
+      #todoListWrapper {
+        background: $dark-bg;
+        h2 {
+          color: $light;
+        }
+        form {
+          #todoWrapper {
+            #todoInner {
+              button {
+                background: $emerald;
+                color: $light;
+                border: 1px solid $light;
+              }
+            }
+          }
+        }
+        .listCont {
+          .cbCont {
+            .cbInner {
+              .todoTxt {
+                p {
+                  color: $light;
+                }
+              }
+            }
+          }
+          #btnTodo {
+            button {
+            }
+          }
+        }
+        &::before,
+        &:after {
+          background: $dark-bg;
+        }
+      }
+    }
+    #caleCont {
+      background: $dark-bg;
+      .fc-header-toolbar {
+        .fc-toolbar-chunk {
+          //First row of buttons containing today, < and >
+          button {
+            border: 1px solid $light;
+            transition: all 0.2s ease-in-out;
+            &:active {
+              transform: translate(2px, 2px);
+              box-shadow: none;
+            }
+          }
+          &:first-of-type {
+            .fc-today-button {
+              background: $digital-color;
+              color: #000;
+              opacity: 1 !important;
+            }
+            .fc-button-group {
+              .fc-button-primary {
+                background: $hot-pink;
+                color: $light;
+              }
+            }
+          }
+          //Calendar Title
+          &:nth-of-type(2) {
+            h2 {
+              color: #fff;
+              font-size: 35px;
+            }
+          }
+          //Last row of btns, containing month, week and day toggles
+          &:last-of-type {
+            .fc-button-group {
+              .fc-button-active {
+                background: $blue-btn;
+              }
+              button {
+                background: $pink-btn;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+      .fc-scroller-liquid-absolute {
+        overflow: hidden !important;
+      }
+      .fc-view-harness {
+        .fc-timeGridDay-view,
+        .fc-timeGridWeek-view,
+        .fc-timeGridMonth-view,
+        .fc-dayGridMonth-view {
+          table {
+            thead {
+              //Color for the day markers
+              a {
+                color: $digital-color;
+              }
+            }
+            tbody {
+              //This is the background color for today
+              .fc-day-today {
+                background-color: #59523f;
+              }
+              //Color for the days of the month
+              .fc-daygrid-day-number {
+                color: $light;
+                opacity: 1;
+              }
+              //Color of the days from other months
+              .fc-day-other {
+                a {
+                  color: #fff !important;
+                }
+              }
+            }
+            //Month calendar days from other month's opacity control
+            .fc-day-other .fc-daygrid-day-top {
+              opacity: 1 !important;
+            }
+            //Week calendar, left column color
+            .fc-timegrid-axis-cushion,
+            .fc-timegrid-axis-cushion {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    #weathCont {
+      background: $dark-bg;
+      #wtitle {
+        color: $light;
+      }
+      form {
+        input {
+          background: #000;
+          border: 1px solid $light;
+          color: #fff;
+          &::placeholder {
+            color: #fff;
+          }
+        }
+        button {
+          background: $pink-btn;
+          border: 1px solid $light;
+          transition: all 0.2s ease-in-out;
+          &:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+          }
+        }
+      }
+      #weathercondition {
+        color: $digital-color;
+        #wimg {
+        }
+      }
+      #errorDisplay {
+        color: $digital-color;
+      }
+    }
+  }
+}
