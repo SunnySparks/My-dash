@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf");
+  src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
+  font-family: "digital-7";
+  src: url("../fonts/digital-7.ttf");
+  src: url("../fonts/digital-7\ \(italic\).ttf");
+  src: url("../fonts/digital-7\ \(mono\ italic\).ttf");
+  src: url("../fonts/digital-7\ \(mono\).ttf");
+}
+
 //General Layout
 #appGrid {
   width: 100%;
@@ -52,16 +66,24 @@
     .light-theme {
       border: 1px solid #000;
       color: #000;
+      font-family: "open-sans";
     }
     .super-theme {
       border: 1px solid #ff03f4;
       background-size: cover;
+      font-family: "digital-7";
+      font-size: 20px;
     }
     .gradient-theme {
       border: 1px solid #ff03f4;
       background-size: cover;
-      text-shadow: 3px 4px 2px rgba(0, 0, 0, 0.6);
-      color: #766f94;
+      color: #413e52;
+      font-family: "open-sans";
+    }
+    .dark-theme,
+    .auto-theme {
+      font-family: "open-sans";
+      border: 1px solid #2873ff;
     }
   }
 }

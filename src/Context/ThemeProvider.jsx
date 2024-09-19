@@ -24,7 +24,7 @@ const themes = [
     index: "three",
   },
   {
-    name: "auto",
+    name: "System Pref",
     className: "auto-theme",
     index: "four",
   },
