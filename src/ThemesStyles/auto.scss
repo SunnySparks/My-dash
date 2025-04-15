@@ -2,7 +2,7 @@ $digital-color: #20ceb2;
 $blue-btn: #0942c7;
 $pink-btn: #5f2664;
 $hot-pink: #600153;
-$dark-bg: #2b2b2b;
+$dark-bg: #000;
 $emerald: #194642;
 $light: #dedede;
 
@@ -120,17 +120,27 @@ $light: #dedede;
 
 @media (prefers-color-scheme: dark) {
   .auto-theme {
-    background: #000;
+    background: url(../src/assets/bg/rainbow.webp) no-repeat #000;
+    background-size: contain;
+    background-position: center;
     #buttonCont {
       h2 {
         color: #fff;
       }
     }
     #clockCont {
+      box-shadow: none;
+      border: none;
       h1 {
         color: $digital-color !important;
         margin-bottom: 0;
       }
+    }
+    .outerCont {
+      border: 1px solid #fff;
+      box-shadow: 10px 10px 15px -4px rgba(255, 255, 255, 0.75);
+      -webkit-box-shadow: 10px 10px 15px -4px rgba(255, 255, 255, 0.75);
+      -moz-box-shadow: 10px 10px 15px -4px rgba(255, 255, 255, 0.75);
     }
     #calcCont {
       background: $dark-bg;
@@ -138,7 +148,7 @@ $light: #dedede;
       border: 1px solid;
       border-radius: 0;
       #calcScreen {
-        background: #121212;
+        background: #000;
         margin: 0;
         width: auto;
         #calcOperation {

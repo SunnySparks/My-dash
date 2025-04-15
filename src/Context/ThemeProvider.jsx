@@ -1,4 +1,5 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+
 // Crear un nuevo contexto para el tema
 export const ThemeContext = createContext();
 
@@ -30,17 +31,46 @@ const themes = [
   },
 ];
 
+const THEME_STORAGE_KEY = "selected-theme";
+
 // Crear un componente ThemeProvider
 const ThemeProvider = ({ children }) => {
-  // Definir el estado inicial del tema
-  const [theme, setTheme] = useState(themes[0]);
+  const getInitialTheme = () => {
+    const storedThemeName = localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedThemeName) {
+      const found = themes.find((t) => t.name === storedThemeName);
+      if (found) return found;
+    }
 
-  // Función para alternar el tema
+    // Optional: detect system preference
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    return prefersDark
+      ? themes.find((t) => t.name === "dark")
+      : themes.find((t) => t.name === "light");
+  };
+
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  // Apply theme class to <html> when theme changes
+  useEffect(() => {
+    // Remove all other theme classes
+    themes.forEach((t) => {
+      document.documentElement.classList.remove(t.className);
+    });
+
+    // Add the current one
+    document.documentElement.classList.add(theme.className);
+
+    // Save selection
+    localStorage.setItem(THEME_STORAGE_KEY, theme.name);
+  }, [theme]);
+
   const toggleTheme = (newTheme) => {
     setTheme(newTheme);
   };
 
-  // Proporcionar el estado del tema y la función de alternar a los componentes hijos
   return (
     <ThemeContext.Provider value={{ theme, themes, toggleTheme }}>
       {children}
