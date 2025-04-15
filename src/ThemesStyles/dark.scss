@@ -7,16 +7,25 @@ $emerald: #194642;
 $light: #dedede;
 
 .dark-theme {
+  background: url(../src/assets/bg/rainbow.webp) no-repeat #000;
+  background-size: contain;
+  background-position: center;
   #buttonCont {
     h2 {
       color: #fff;
     }
   }
   #clockCont {
+    box-shadow: none;
     h1 {
       color: $digital-color !important;
       margin-bottom: 0;
     }
+  }
+  .outerCont {
+    box-shadow: 10px 10px 15px -4px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 10px 10px 15px -4px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 10px 15px -4px rgba(255, 255, 255, 0.75);
   }
   #calcCont {
     background: $dark-bg;
