@@ -120,7 +120,7 @@ $light: #dedede;
 
 @media (prefers-color-scheme: dark) {
   .auto-theme {
-    background: url(../src/assets/bg/rainbow.webp) no-repeat #000;
+    background: url(../../public/assets/rainbow.webp) no-repeat #000;
     background-size: contain;
     background-position: center;
     #buttonCont {
